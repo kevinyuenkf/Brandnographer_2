@@ -1,38 +1,38 @@
 <template>
   <div class="base-div">
     <div class="tabs-item" v-ripple v-for="(item,i) in tabs" :key="i" :class="selected == i?'active':''" @click="$emit('itemOnclick',item.path,i)" >
-      {{item.title}}
+      {{$t(item.title)}}
     </div>
     <BoldLine id="bold-line" class="my-7" :options="{color:'#eaeaea',height:'3px',width:'100%'}"></BoldLine>
-    <h5>Please choose application form</h5>
+    <h5>{{ $t('please_choose_form') }}</h5>
     <div v-ripple class="open-list-btn mt-0" @click="active=!active">
-      <h3>Select Services</h3>
+      <h3>{{ $t('select_services') }}</h3>
       <v-icon :class="active? 'rotate-90':'rotate-0'" v-text="'mdi-menu-right'" color="#4e45d1"></v-icon>
     </div>
     <transition name="fade">
       <div class="ml-4 mt-n3" v-show="active">
-        <div v-ripple class="list-subbtn">New Licence</div>
-        <div v-ripple class="list-subbtn">Licence Renewal</div>
-        <div v-ripple class="list-subbtn">Licence Transfer</div>
+        <div v-ripple class="list-subbtn">{{ $t('new_lic') }}</div>
+        <div v-ripple class="list-subbtn">{{ $t('lic_renew') }}</div>
+        <div v-ripple class="list-subbtn">{{ $t('lic_transfer') }}</div>
         <div v-ripple class="list-subbtn" @click="active_sub=!active_sub">
-          <div>Nominated Reserve Licensee</div>
+          <div>{{ $t('nom_res_li') }}</div>
           <v-icon :class="active_sub? 'rotate-90':'rotate-0'" v-text="'mdi-menu-right'" color="#4e45d1"></v-icon>
         </div>
         <transition name="fade">
           <div class="my-2 ml-4" v-show="active_sub" >
             <div v-ripple class="list-subbtn sub">
               <div class="mr-2">•</div>
-              <div>Application for Authorisation of a Nominated Reserve Licensee</div>
+              <div>{{ $t('nom_res_li_a') }}</div>
             </div>
             <div v-ripple class="list-subbtn sub">
               <div class="mr-2">•</div>
-              <div>Declaration of the Nominated Reserve Licensee</div>
+              <div>{{ $t('nom_res_li_b') }}</div>
             </div>
           </div>
         </transition>
-        <div v-ripple class="list-subbtn">Temporary Absence</div>
-        <div v-ripple class="list-subbtn">Licence Amendment</div>
-        <div v-ripple class="list-subbtn">Change Information</div>
+        <div v-ripple class="list-subbtn">{{ $t('temp_abs') }}</div>
+        <div v-ripple class="list-subbtn">{{ $t('lic_amend') }}</div>
+        <div v-ripple class="list-subbtn">{{ $t('change_info') }}</div>
       </div>
     </transition>
   </div>

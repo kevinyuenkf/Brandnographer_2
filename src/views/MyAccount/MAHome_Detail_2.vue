@@ -4,45 +4,45 @@
       <div class="hidden-md-and-down header" >
         <div class="d-flex justify-center flex-column">
           <div class="d-flex justify-end mt-n2">
-            <h5 class="ma-0 fw-400 " style="color:white">User :  Brandnographer2</h5>
+            <h5 class="ma-0 fw-400 " style="color:white">{{$t('profile.user')}}  Brandnographer2</h5>
           </div>
           <div class="d-flex mt-n3">
             <BoldLine :options="{color:this.$vuetify.theme.themes.light.secondary,height:'auto',width:'6px'}" :spacing="'x-stretch'"></BoldLine>
-            <h2>Application Status</h2>
+            <h2>{{$t('profile.application_status')}}</h2>
           </div>
         </div>
       </div>
       <div class="body" >
-        <p>The estimated (est.) provided below is only a reference to <router-link class="no-dec" :to="{ name: 'InProcedures'}">standard procedures</router-link>. For enquiry, please contact us within office hours : 2186 8167/ llps@gov.hk. The whole process takes around 8-10 weeks.</p>
+        <p>{{$t('profile.inst_a')}}<router-link class="no-dec" :to="{ name: 'InProcedures'}">{{$t('profile.inst_b')}}</router-link>{{$t('profile.inst_c')}}</p>
       </div>
       <div class='o-table '>
             <!-- Ongoing -->
             <div class="o-tabs-card mt-6 mb-12" v-if="selected==0">
               <div class="top-header">
-                <h3>ABC Bar</h3>
-                <h5>Reference No: llps1234_2345555-12122</h5>
+                <h3>{{$t('payment.bar')}}</h3>
+                <h5>{{$t('payment.ref_no')}} llps1234_2345555-12122</h5>
               </div>
               <div class="sec-header">
-                <h6>Application Type</h6>
-                <h6>Submission Date</h6>
-                <h6>Status</h6>
-                <div class="last-div"><h6>Form</h6></div>
+                <h6>{{$t('payment.a_4')}}</h6>
+                <h6>{{$t('payment.a_9')}}</h6>
+                <h6>{{$t('payment.a_10')}}</h6>
+                <div class="last-div"><h6>{{$t('payment.form')}}</h6></div>
 
               </div>
               <div class="content-container">
                 <div class="content">
-                  <div>{{ongoing_item.type}}</div>
+                  <div>{{$t(ongoing_item.type)}}</div>
                   <div class="d-flex align-center">
-                    <div>{{ongoing_item.date}}</div>
+                    <div>{{$t(ongoing_item.date)}}</div>
                   </div>
                   <div>
                     <div class="mr-1" :class="statusToClass(items[items_current].title)">•</div>
-                    <h6>{{items[items_current].title}}</h6>
+                    <h6>{{$t(items[items_current].title)}}</h6>
                   </div>
                   <div>
                     <a class="no-dec" :href="publicPath+'fehb106_new form_filled.pdf'" download="fehb106_new form_filled.pdf" >
                       <v-btn text class="simple-btn" color="primary" light>
-                       Download
+                        {{$t('payment.download')}}
                       </v-btn>
                     </a>
 
@@ -57,16 +57,16 @@
                 <div class="callout-div rounded error-box py-4 align-start flex-wrap" v-if="infoError">
                   <div class="d-flex align-start">
                     <v-icon color="#DB1D00" class="mt-1">mdi-information</v-icon>
-                    <p class="my-0 ml-4">Document missing :</p>
-                    <p class="my-0 ml-2"> A copy of layout plan <br/>(Deadline for re-submission : on or before 15-02-2021)</p>
+                    <p class="my-0 ml-4">{{$t('document_missing')}}</p>
+                    <p class="my-0 ml-2">{{$t('a_copy_of_layout_plan')}}<br/>{{$t('deadline_re_submission')}}</p>
                   </div>
                   <div class="d-flex align-start" >
                     <v-icon color="#DB1D00" class="mt-1">mdi-information</v-icon>
-                    <p class="my-0 ml-4">Document missing :</p>
-                    <p class="my-0 ml-2"> Please submit 3 newspaper advertisements <br/>(Deadline for re-submission : on or before 15-02-2021)</p>
+                    <p class="my-0 ml-4">{{$t('document_missing')}}</p>
+                    <p class="my-0 ml-2">{{$t('please_submit_3_advert')}}<br/>{{$t('deadline_re_submission')}}</p>
                   </div>
                   <div class="d-flex align-start" >
-                    <p class="my-0 ml-2 grey-text">Applicant is required to make immediate arrangement to place an advertisement in 3 newspapers on submission of application and return to LLPS office through mail or in person.</p>
+                    <p class="my-0 ml-2 grey-text">{{$t('stage_3_content')}}</p>
                   </div>
                 </div>
               </div>
@@ -85,7 +85,7 @@
                     <v-icon v-if="i<=items_current" style="font-size:40px" color="primary">mdi-check-circle</v-icon>
                     <v-icon v-if="!(i<=items_current)" style="font-size:40px" color="#E0E0E0">mdi-checkbox-blank-circle</v-icon>
                   </template>
-                  <div class="d-flex"><h5 class="mb-2" style="text-align:center;" :class="item.active? 'step-active' : ''">{{item.title}}</h5></div>
+                  <div class="d-flex"><h5 class="mb-2" style="text-align:center;" :class="item.active? 'step-active' : ''">{{$t(item.title)}}</h5></div>
                   <h5 v-if="i==items_current" class="em-16 mt-n1 fw-400" style="color:#4e45d1">
                     <!-- 🞃 -->
                     <v-icon style="font-size:32px" color="primary">mdi-menu-down</v-icon>
@@ -96,47 +96,47 @@
               </div>
               </div>
               <div  class="ml-8 pb-8 mt-8" v-if="items_current==0">
-                <h2>Stage 1 : Application Submitted</h2>
-                <p class="my-1 p-18"><span>Est processing time on this stage :</span> 1 week </p>
-                <p class="my-1 p-18"><span>Responsible Department :</span> Licensing Office    </p>
-                <p class="my-1 p-18"><span>Case Officer's Contact :</span> Ben Chan ( Tel: 2345 9834 / Email: benchan@llps.com )  </p>
-                <p class="mt-9 pr-8 p-20">Under normal circumstances the application will pass to different departments within 1 week after the application receieved. You will be notified if there is any problem from different departmants. </p>
+                <h2>{{$t('stage_1_application_submitted')}}</h2>
+                <p class="my-1 p-18"><span>{{$t('est_processing_time')}}</span>{{$t('week_1')}}</p>
+                <p class="my-1 p-18"><span>{{$t('responsible_department')}}</span>{{$t('licensing_office')}}</p>
+                <p class="my-1 p-18"><span>{{$t('case_contact')}}</span>{{$t('ben_chan')}}</p>
+                <p class="mt-9 pr-8 p-20">{{$t('stage_1_end')}}</p>
               </div>
 
               <div  class="ml-8 pb-8 mt-8" v-if="items_current==1">
-                <h2 >Stage 2 : Department Feedback</h2>
-                <p class="my-1">Est processing time on this stage : 2 weeks  </p>
-                <p class="my-1">Responsible Department : Different Departments      </p>
-                <p class="my-1">Case Officer's Contact : Ben Chan ( Tel: 2345 9834 / Email: benchan@llps.com )   </p>
+                <h2 >{{$t('stage_2_Department_feedback')}}</h2>
+                <p class="my-1">{{$t('week_2')}}</p>
+                <p class="my-1">{{$t('responsible_department_2')}}</p>
+                <p class="my-1">{{$t('officer')}}</p>
 
                 <div class="simple-table mt-8">
-                  <p>Feedback from Different Department </p>
-                  <p>Status</p>
+                  <p>{{$t('feedback_from_dept')}}</p>
+                  <p>{{$t('payment.a_10')}}</p>
                 </div>
                 <BoldLine :options="{color:'#D2D2D25e',height:'2px',width:'calc(100% - 32px)'}" ></BoldLine>
                 <div class="simple-table mt-4">
-                  <p><strong>Hong Kong Police </strong></p>
+                  <p><strong>{{$t('hk_police')}}</strong></p>
                   <v-icon style="font-size:40px" color="#00A639">mdi-check-circle</v-icon>
                 </div>
                 <div class="simple-table mt-4">
-                  <p><strong>Home Affairs Department </strong></p>
+                  <p><strong>{{$t('home_affairs')}}</strong></p>
                   <v-icon style="font-size:40px" color="#E0E0E0">mdi-checkbox-blank-circle</v-icon>
                 </div>
                 <div class="simple-table mt-4">
-                  <p><strong>District Environmental Hygiene Office - Posting Notice </strong></p>
+                  <p><strong>{{$t('district_notice')}}</strong></p>
                   <v-icon style="font-size:40px" color="#E0E0E0">mdi-checkbox-blank-circle</v-icon>
                 </div>
               </div>
 
               <div  class="ml-8 pb-8 mt-8" v-if="items_current==2">
-                <h2 >Stage 3 : Verify Documents</h2>
-                <p class="my-1 p-18"><span>Est processing time on this stage :</span> 1 week </p>
-                <p class="my-1 p-18"><span>Responsible Department :</span> Licensing Office   </p>
-                <p class="my-1 p-18"><span>Case Officer's Contact :</span> Ben Chan ( Tel: 2345 9834 / Email: benchan@llps.com ) </p>
+                <h2 >{{$t('stage_3_vertify')}}</h2>
+                <p class="my-1 p-18"><span>{{$t('est_processing_time')}}</span>{{$t('week_1')}}</p>
+                <p class="my-1 p-18"><span>{{$t('responsible_department')}}</span>{{$t('licensing_office')}}</p>
+                <p class="my-1 p-18"><span>{{$t('case_contact')}}</span>{{$t('ben_chan')}}</p>
 
                 <div class="d-flex">
-                  <h5 class="em-22 mw-6">Document Type</h5>
-                  <h5 class="em-22 mw-4">Status</h5>
+                  <h5 class="em-22 mw-6">{{$t('document_type')}}</h5>
+                  <h5 class="em-22 mw-4">{{$t('payment.a_10')}}</h5>
                 </div>
                 <BoldLine :options="{color:'rgba(177,177,177,0.37)',height:'2px',width:'calc(100% - 32px)'}"></BoldLine>
                 <div class="d-flex py-5 " v-for="(item,i) in doucment_items" :key="i">
@@ -144,11 +144,11 @@
                     <v-icon color="#00A639" class="mr-5 mb-2" style="font-size:34px;">mdi-check-circle</v-icon>
                     <div class="d-flex flex-column">
                       <div class="d-flex align-center">
-                        <h5 class="ma-0 mb-1 em-18">{{item.title}}</h5>
+                        <h5 class="ma-0 mb-1 em-18">{{$t(item.title)}}</h5>
                       </div>
                       <div class="d-flex bottom-text x-s mt-n2" >
-                        <p class="mr-1">File name : </p>
-                        <a :href="publicPath+'SAMPLE.png'" download target="_blank" class="mr-5"><p>{{item.filename}}</p></a>
+                        <p class="mr-1">{{$t('file_name')}}</p>
+                        <a :href="publicPath+'SAMPLE.png'" download target="_blank" class="mr-5"><p>{{$t(item.filename)}}</p></a>
                       </div>
                     </div>
                   </div>
@@ -156,9 +156,9 @@
                     <div>
                      <div class="status-div">
                         <div class="mr-1" :class="statusToClass(item.status)">•</div>
-                        <h6>{{item.status}}</h6>
+                        <h6>{{$t(item.status)}}</h6>
                       </div>
-                      <h5 class="l-u">{{item.lastUpdate}}</h5>
+                      <h5 class="l-u">{{$t(item.lastUpdate)}}</h5>
                     </div>
                     <v-btn v-if="item.btn" depressed :disabled="btnDisabled" class="o-btn-action small mr-8" style="justify-self:flex-start;" color="primary">Choose file</v-btn>
                   </div>
@@ -168,7 +168,7 @@
                     <v-icon color="#DB1D00" class="mr-5 mb-2" style="font-size:34px;">mdi-information</v-icon>
                     <div class="d-flex flex-column">
                       <div class="d-flex align-center">
-                        <h5 class="ma-0 mb-1 em-18" style="color:#DB1D00">A copy of layout plan</h5>
+                        <h5 class="ma-0 mb-1 em-18" style="color:#DB1D00">{{$t('a_copy_of_layout_plan')}}</h5>
                       </div>
                     </div>
                   </div>
@@ -176,10 +176,10 @@
                     <div>
                      <div class="status-div">
                         <div class="mr-1" :class="statusToClass('Not recieved')">•</div>
-                        <h6>Not recieved</h6>
+                        <h6>{{$t('not_received')}}</h6>
                       </div>
                     </div>
-                    <v-btn depressed :disabled="btnDisabled" class="o-btn-action dis-btn small mr-8" style="justify-self:flex-start;" color="primary">Choose file</v-btn>
+                    <v-btn depressed :disabled="btnDisabled" class="o-btn-action dis-btn small mr-8" style="justify-self:flex-start;" color="primary">{{$t('choose_file')}}</v-btn>
                   </div>
                 </div>
                 <div class="d-flex py-5 " >
@@ -187,7 +187,7 @@
                     <v-icon color="#DB1D00" class="mr-5 mb-2" style="font-size:34px;">mdi-information</v-icon>
                     <div class="d-flex flex-column">
                       <div class="d-flex align-center">
-                        <h5 class="ma-0 mb-1 em-18" style="color:#DB1D00">3 Newspaper Advertisements</h5>
+                        <h5 class="ma-0 mb-1 em-18" style="color:#DB1D00">{{$t('three_news_advert')}}</h5>
                         <v-tooltip right>
                           <template v-slot:activator="{ on, attrs }">
                             <v-icon class="mb-1 ml-3 " color="secondary" dark v-bind="attrs" v-on="on">
@@ -199,7 +199,7 @@
                               <v-icon color="secondary" dark >
                                 mdi-help-circle
                               </v-icon>
-                              <h3 class="mb-0">Tips:</h3>
+                              <h3 class="mb-0">{{$t('tips')}}</h3>
                             </div>
                             <div class="ml-8 c-div">
                               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -213,7 +213,7 @@
                     <div>
                      <div class="status-div">
                         <div class="mr-1" :class="statusToClass('Not recieved')">•</div>
-                        <h6>Not recieved</h6>
+                        <h6>{{$t('not_received')}}</h6>
                       </div>
                     </div>
                   </div>
@@ -222,12 +222,11 @@
             </div>
       </div>
       <div class="body pt-0 mt-2" >
-        <router-link class="no-dec" :to="{ name: 'MAHome'}"><v-btn depressed class="o-btn-action rounded-pill mt-2 mr-5 mb-8" color="#413E56" dark>Back</v-btn></router-link>
+        <router-link class="no-dec" :to="{ name: 'MAHome'}"><v-btn depressed class="o-btn-action rounded-pill mt-2 mr-5 mb-8" color="#413E56" dark>{{$t('payment.a_8')}}</v-btn></router-link>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import BoldLine from '../../components/misc/bold-line'
 
@@ -249,34 +248,34 @@ export default {
       menu:false,menu_1:false,menu_2:false,
       btnDisabled:true,
       items : [
-        { title: 'Application Submitted', remark: ' ', active : true, },
-        { title: 'Department Feedback', remark: ' ', active : true, arrow: true}, // true: 6-3-2
-        { title: 'Verify Documents', remark: ' ', active : false, },
-        { title: 'Seek Approval', remark: ' ', active : false, },
-        { title: 'Licence Ready', remark: ' ', active : false, },
-        { title: 'Licence Issued', remark: ' ', active : false, },
+        { title: 'application_submitted', remark: ' ', active : true, },
+        { title: 'department_feedback', remark: ' ', active : true, arrow: true}, // true: 6-3-2
+        { title: 'documents_verified', remark: ' ', active : false, },
+        { title: 'seek_approval', remark: ' ', active : false, },
+        { title: 'licence_ready', remark: ' ', active : false, },
+        { title: 'licence_issued', remark: ' ', active : false, },
       ],
       items_current:2, // 1: 6-3-2
       ongoing_item:
-        {type:'New Liquor Licence 2021-2022',date:'02-01-2021\n18:00',status:'Application Submitted'}
+      {type:'payment.new_lqiuor_licence_2021_2022',date:'02-01-2021\n18:00',status:'application_submitted'}
       ,
       doucment_items :[
         {
-          title:'Recent photograph (35mm x 40mm)',
+          title:'doc_items_a',
           filename:'photo_1.jpg',
-          status:'Verified',
+          status:'verified',
           lastUpdate: '01-02-2020'
         },
         {
-          title:"A copy of the applicant's HKID Card",
+          title:"doc_items_c",
           filename:'HKID.jpg',
-          status:'Verified',
+          status:'verified',
           lastUpdate: '01-02-2020'
         },
         {
-          title:'A copy of Business Registration Certificate',
+          title:'doc_items_b',
           filename:'BRC.jpg',
-          status:'Verified',
+          status:'verified',
           lastUpdate: '01-02-2021'
         }
       ],

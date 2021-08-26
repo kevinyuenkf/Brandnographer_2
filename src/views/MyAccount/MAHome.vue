@@ -4,11 +4,11 @@
       <div class="hidden-md-and-down header" >
         <div class="d-flex justify-center flex-column">
           <div class="d-flex justify-end mt-n2">
-            <h5 class="ma-0 fw-400" style="color:white">User :  Brandnographer2</h5>
+            <h5 class="ma-0 fw-400" style="color:white">{{$t('profile.user')}}Brandnographer2</h5>
           </div>
           <div class="d-flex mt-n3">
             <BoldLine :options="{color:this.$vuetify.theme.themes.light.secondary,height:'auto',width:'6px'}" :spacing="'x-stretch'"></BoldLine>
-            <h2>My Account</h2>
+            <h2>{{$t('my_account')}}</h2>
           </div>
         </div>
       </div>
@@ -19,21 +19,21 @@
         </div>
         <div v-if="record">
           <div class="o-tabs-div mb-8" >
-            <div v-ripple class="item" :class="selected==0?'active':''" @click="selected=0">Ongoing Application</div>
-            <div v-ripple class="item" :class="selected==1?'active':''" @click="selected=1" >Past Application</div>
-            <div v-ripple class="item" :class="selected==2?'active':''" @click="selected=2">Draft Application</div>
+            <div v-ripple class="item" :class="selected==0?'active':''" @click="selected=0">{{ $t('payment.ongoing_application') }}</div>
+            <div v-ripple class="item" :class="selected==1?'active':''" @click="selected=1" >{{ $t('payment.past_application') }}</div>
+            <div v-ripple class="item" :class="selected==2?'active':''" @click="selected=2">{{ $t('payment.draft_application') }}</div>
           </div>
 
           <!-- Ongoing -->
           <div class="o-tabs-card mt-6 mb-12" v-if="selected==0">
             <div class="top-header">
-              <h3>ABC Bar</h3>
+              <h3>{{$t('payment.bar')}}</h3>
               <v-menu v-model="menu" :close-on-content-click="false" :nudge-left="menu_offset" offset-y offset-x>
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn text class="simple-btn" dark v-bind="attrs" v-on="on">
                     <v-icon left class="mr-3">mdi-filter</v-icon>
                     <!-- <img width="26" class="mb-3 mt-3" src="../../assets/my_acc_filter.svg" /> -->
-                    <div class="hidden-md-and-down">Filter Order</div>
+                    <div class="hidden-md-and-down">{{ $t('payment.filter_order') }}</div>
                   </v-btn>
                 </template>
                 <div class="filter-menu">
@@ -41,41 +41,41 @@
                     <div class="d-flex">
                       <v-icon dense class="mr-1 mt-n1" color="primary">mdi-filter</v-icon>
                       <!-- <img width="26" class="mb-3 mt-3" src="../../assets/my_acc_filter.svg" /> -->
-                      <h3>Filter Order</h3>
+                      <h3>{{ $t('payment.filter_order') }}</h3>
                     </div>
                     <v-btn class="mt-n1" icon @click="menu = !menu"><v-icon>mdi-close</v-icon></v-btn>
                   </div>
-                  <v-select class="mt-6" :menu-props="{offsetY: true}" :items="['a','b']" label="Application Type" outlined></v-select>
-                  <v-select class="mt-n2" :menu-props="{offsetY: true}" :items="['All','Old to New','New to Old']" label="Submission Date" outlined></v-select>
-                  <v-select class="mt-n2 mb-2" :menu-props="{offsetY: true}" :items="['a','b']" label="Status" outlined></v-select>
+                  <v-select class="mt-6" :menu-props="{offsetY: true}" :items="['a','b']" :label="$t('payment.a_4')" outlined></v-select>
+                  <v-select class="mt-n2" :menu-props="{offsetY: true}" :items="['All','Old to New','New to Old']" :label="$t('payment.a_9')" outlined></v-select>
+                  <v-select class="mt-n2 mb-2" :menu-props="{offsetY: true}" :items="['a','b']" :label="$t('payment.a_10')" outlined></v-select>
                   <div class="d-flex justify-space-between">
-                    <v-btn text color="#B0B0B0"  class="simple-btn">Clear all</v-btn>
-                    <v-btn text color="primary" class="simple-btn" @click="menu = !menu">Apply</v-btn>
+                    <v-btn text color="#B0B0B0"  class="simple-btn">{{$t('payment.clear_all')}}</v-btn>
+                    <v-btn text color="primary" class="simple-btn" @click="menu = !menu">{{$t('apply')}}</v-btn>
                   </div>
                 </div>
               </v-menu>
             </div>
             <div class="sec-header">
-              <h6>Application Type</h6>
-              <h6>Submission Date</h6>
-              <h6 class="hidden-md-and-down">Status</h6>
+              <h6>{{ $t('payment.a_4') }}</h6>
+              <h6>{{ $t('payment.a_9')}}</h6>
+              <h6 class="hidden-md-and-down">{{ $t('payment.a_10') }}</h6>
             </div>
             <div class="content-container" v-for="(item,i) in ongoing_items" :key="i">
               <div class="content">
-                <div>{{item.type}}</div>
+                <div>{{$t(item.type)}}</div>
                 <div class="d-flex align-center">
-                  <div>{{item.date}}</div>
+                  <div>{{$t(item.date)}}</div>
                   <v-btn icon color="primary" light class="hidden-lg-and-up" @click="$router.push({name:'MAHomeDetail'})">
                       <v-icon>mdi-chevron-right</v-icon>
                   </v-btn>
                 </div>
                 <div class="hidden-md-and-down">
                   <div class="mr-1" :class="statusToClass(item.status)">•</div>
-                  <h6>{{item.status}}</h6>
+                  <h6>{{$t(item.status)}}</h6>
                 </div>
                 <div class="hidden-md-and-down ">
                   <v-btn text class="simple-btn" color="primary" light @click="$router.push({name:'MAHomeDetail'})">
-                    Check Details
+                    {{ $t('payment.a_11') }}
                   </v-btn>
                 </div>
               </div>
@@ -101,13 +101,13 @@
           <!-- Past  -->
           <div class="o-tabs-card mt-6 mb-12" v-if="selected==1">
             <div class="top-header">
-              <h3>ABC Bar</h3>
+              <h3>{{$t('payment.bar')}}</h3>
               <v-menu v-model="menu_1" :close-on-content-click="false" :nudge-left="menu_offset" offset-y offset-x>
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn text class="simple-btn" dark v-bind="attrs" v-on="on">
                     <v-icon left class="mr-3">mdi-filter</v-icon>
                     <!-- <img width="26" class="mb-3 mt-3" src="../../assets/my_acc_filter.svg" /> -->
-                    <div class="hidden-md-and-down">Filter Order</div>
+                    <div class="hidden-md-and-down">{{$t('payment.filter_order')}}</div>
                   </v-btn>
                 </template>
                 <div class="filter-menu">
@@ -115,42 +115,42 @@
                     <div class="d-flex">
                       <v-icon dense class="mr-1 mt-n1" color="primary">mdi-filter</v-icon>
                       <!-- <img width="26" class="mb-3 mt-3" src="../../assets/my_acc_filter.svg" /> -->
-                      <h3>Filter Order</h3>
+                      <h3>{{$t('payment.filter_order')}}</h3>
                     </div>
                     <v-btn class="mt-n1" icon @click="menu_1 = !menu_1"><v-icon>mdi-close</v-icon></v-btn>
                   </div>
-                  <v-select class="mt-6" :menu-props="{offsetY: true}" :items="['a','b']" label="Application Type" outlined></v-select>
-                  <v-select class="mt-n2" :menu-props="{offsetY: true}" :items="['All','Old to New','New to Old']" label="Submission Date" outlined></v-select>
-                  <v-select class="mt-n2 mb-2" :menu-props="{offsetY: true}" :items="['a','b']" label="Status" outlined></v-select>
+                  <v-select class="mt-6" :menu-props="{offsetY: true}" :items="['a','b']" :label="$t('payment.a_4')" outlined></v-select>
+                  <v-select class="mt-n2" :menu-props="{offsetY: true}" :items="['All','Old to New','New to Old']" :label="$t('payment.a_9')" outlined></v-select>
+                  <v-select class="mt-n2 mb-2" :menu-props="{offsetY: true}" :items="['a','b']" :label="$t('payment.a_10')" outlined></v-select>
                   <div class="d-flex justify-space-between">
-                    <v-btn text color="#B0B0B0"  class="simple-btn">Clear all</v-btn>
-                    <v-btn text color="primary" class="simple-btn" @click="menu_1 = !menu_1">Apply</v-btn>
+                    <v-btn text color="#B0B0B0"  class="simple-btn">{{$t('payment.clear_all')}}</v-btn>
+                    <v-btn text color="primary" class="simple-btn" @click="menu_1 = !menu_1">{{$t('apply')}}</v-btn>
                   </div>
                 </div>
               </v-menu>
             </div>
             <div class="sec-header">
-              <h6>Application Type</h6>
-              <h6>Submission Date</h6>
-              <h6 class="hidden-md-and-down">Status</h6>
+              <h6>{{ $t('payment.a_4') }}</h6>
+              <h6>{{ $t('payment.a_9') }}</h6>
+              <h6 class="hidden-md-and-down">{{ $t('payment.a_10') }}</h6>
             </div>
             <div class="content-container" v-for="(item,i) in past_application_items" :key="i">
               <div class="content" >
-                <div>{{item.type}}</div>
+                <div>{{$t(item.type)}}</div>
                 <div class="d-flex align-center">
-                  <div>{{item.date}}</div>
+                  <div>{{$t(item.date)}}</div>
                   <v-btn icon color="primary" light class="hidden-lg-and-up">
                       <v-icon>mdi-chevron-right</v-icon>
                   </v-btn>
                 </div>
                 <div class="hidden-md-and-down">
                   <div class="mr-1" :class="statusToClass(item.status)">•</div>
-                  <h6>{{item.status}}</h6>
+                  <h6>{{$t(item.status)}}</h6>
                 </div>
                 <div class="hidden-md-and-down ">
                   <a class="no-dec" :href="publicPath+'fehb106_new form_filled.pdf'" download="fehb106_new form_filled.pdf" >
                     <v-btn text class="simple-btn" color="primary" light>
-                      View
+                      {{$t('payment.view')}}
                     </v-btn>
                   </a>
                 </div>
@@ -163,13 +163,13 @@
           <!-- Draft  -->
           <div class="o-tabs-card mt-6 mb-12" v-if="selected==2">
             <div class="top-header">
-              <h3>ABC Bar</h3>
+              <h3>{{$t('payment.bar')}}</h3>
               <v-menu v-model="menu_2" :close-on-content-click="false" :nudge-left="menu_offset" offset-y offset-x>
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn text class="simple-btn" dark v-bind="attrs" v-on="on">
                     <v-icon left class="mr-3">mdi-filter</v-icon>
                     <!-- <img width="26" class="mb-3 mt-3" src="../../assets/my_acc_filter.svg" /> -->
-                    <div class="hidden-md-and-down">Filter Order</div>
+                    <div class="hidden-md-and-down">{{$t('payment.filter_order')}}</div>
                   </v-btn>
                 </template>
                 <div class="filter-menu">
@@ -177,40 +177,40 @@
                     <div class="d-flex">
                       <v-icon dense class="mr-1 mt-n1" color="primary">mdi-filter</v-icon>
                       <!-- <img width="26" class="mb-3 mt-3" src="../../assets/my_acc_filter.svg" /> -->
-                      <h3>Filter Order</h3>
+                      <h3>{{$t('payment.filter_order')}}</h3>
                     </div>
                     <v-btn class="mt-n1" icon @click="menu_2 = !menu_2"><v-icon>mdi-close</v-icon></v-btn>
                   </div>
-                  <v-select class="mt-6" :menu-props="{offsetY: true}" :items="['a','b']" label="Application Type" outlined></v-select>
-                  <v-select class="mt-n2" :menu-props="{offsetY: true}" :items="['All','Old to New','New to Old']" label="Submission Date" outlined></v-select>
-                  <v-select class="mt-n2 mb-2" :menu-props="{offsetY: true}" :items="['a','b']" label="Status" outlined></v-select>
+                  <v-select class="mt-6" :menu-props="{offsetY: true}" :items="['a','b']" :label="$t('payment.a_4')" outlined></v-select>
+                  <v-select class="mt-n2" :menu-props="{offsetY: true}" :items="['All','Old to New','New to Old']" :label="$t('payment.a_9')" outlined></v-select>
+                  <v-select class="mt-n2 mb-2" :menu-props="{offsetY: true}" :items="['a','b']" :label="$t('payment.a_10')" outlined></v-select>
                   <div class="d-flex justify-space-between">
-                    <v-btn text color="#B0B0B0"  class="simple-btn">Clear all</v-btn>
-                    <v-btn text color="primary" class="simple-btn" @click="menu_2 = !menu_2">Apply</v-btn>
+                    <v-btn text color="#B0B0B0"  class="simple-btn">{{$t('payment.clear_all')}}</v-btn>
+                    <v-btn text color="primary" class="simple-btn" @click="menu_2 = !menu_2">{{$t('apply')}}</v-btn>
                   </div>
                 </div>
               </v-menu>
             </div>
             <div class="sec-header">
-              <h6>Application Type</h6>
-              <h6>Creation Date</h6>
-              <h6 class="hidden-md-and-down">Last Modification Date</h6>
+              <h6>{{$t('payment.a_4')}}</h6>
+              <h6>{{$t('payment.creation_date')}}</h6>
+              <h6 class="hidden-md-and-down">{{$t('payment.last_mod_date')}}</h6>
             </div>
             <div class="content-container" v-for="(item,i) in draft_items" :key="i">
               <div class="content" >
-                <div>{{item.type}}</div>
+                <div>{{$t(item.type)}}</div>
                 <div class="d-flex align-center">
-                  <div>{{item.date}}</div>
+                  <div>{{$t(item.date)}}</div>
                   <v-btn icon color="primary" light class="hidden-lg-and-up">
                       <v-icon>mdi-chevron-right</v-icon>
                   </v-btn>
                 </div>
                 <div class="hidden-md-and-down" style="white-space:pre;">
-                  <h6>{{item.date_2}}</h6>
+                  <h6>{{$t(item.date_2)}}</h6>
                 </div>
                 <div class="hidden-md-and-down ">
                   <v-btn text class="simple-btn" color="primary" light>
-                    View and Edit
+                    {{$t('payment.view_and_edit')}}
                   </v-btn>
                   <v-btn icon color="primary" light>
                     <v-icon>mdi-delete</v-icon>
@@ -354,17 +354,17 @@ export default {
       infoError:false, // true: red callout, false:purple callout(6-2-1)
       menu:false,menu_1:false,menu_2:false,
       ongoing_items:[
-        {type:'New Liquor Licence 2021-2022',date:'02-01-2021\n18:00',status:'Application Submitted'}
+        {type:'payment.new_lqiuor_licence_2021_2022',date:'02-01-2021\n18:00',status:'application_submitted'}
       ],
       past_application_items:[
-        {type:'Renew Liquor Licence 2019-2020',date:'26-06-2019\n16:00',status:'Approved'},
-        {type:'Renew Liquor Licence 2018-2019',date:'26-05-2018\n15:00',status:'Approved'},
-        {type:'Renew Liquor Licence 2017-218',date:'20-04-2017\n12:00',status:'Approved'}
+        {type:'payment.renew_liquor_licence_1',date:'26-06-2019\n16:00',status:'payment.approved'},
+        {type:'payment.renew_liquor_licence_2',date:'26-05-2018\n15:00',status:'payment.approved'},
+        {type:'payment.renew_liquor_licence_3',date:'20-04-2017\n12:00',status:'payment.approved'}
       ],
       draft_items:[
-        {type:'Renew Liquor Licence',date:'26-06-2020\n16:00',date_2:'30-06-2020\n18:00'},
-        {type:'Renew Liquor Licence',date:'26-05-2020\n15:00',date_2:'26-05-2020\n18:00'},
-        {type:'New Liquor Licence',date:'20-04-2017\n12:00',date_2:'21-04-2020\n15:00'}
+        {type:'payment.renew_liquor_licence',date:'26-06-2020\n16:00',date_2:'30-06-2020\n18:00'},
+        {type:'payment.renew_liquor_licence',date:'26-05-2020\n15:00',date_2:'26-05-2020\n18:00'},
+        {type:'payment.new_lqiuor_licence',date:'20-04-2017\n12:00',date_2:'21-04-2020\n15:00'}
       ],
       partOne: {
         buttons: ['Applications', 'Renewal', 'Follow Up'],
@@ -435,9 +435,9 @@ export default {
       return false;
     },
     statusToClass:function(status){
-      if(status =='Approved'){
+      if(status =='payment.approved'){
         return 'approved';
-      }else if(status == 'Application Submitted'){
+      }else if(status == 'application_submitted'){
         return 'submitted'
       }
     },

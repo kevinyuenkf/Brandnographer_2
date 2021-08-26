@@ -9,7 +9,7 @@
     <BoldLine class="mt-10" :options="{color:'#CEC3F0',height:'3px',width:'100%'}"></BoldLine>
     <v-expansion-panels multiple > 
       <OlsExpansion :order="special.order" :title="$t('overview.title_2')" :type="1">
-        <p class="expansion">{{ $t('overview.b_1') }}</p>
+      <p class="expansion">{{ $t('overview.b_1') }}</p>
         <div class="s-li">
             <div>•</div>
             <p>{{ $t('overview.b_2') }}</p>

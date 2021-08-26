@@ -24,9 +24,9 @@ export default {
   },
   data: () => ({
       btns:[
-          {title:'My Account',path:'MAHome'} ,
-          {title:'Payment',path:'MAPayment'} ,
-          {title:'Profile',path:'MAProfile'}
+          {title:'my_account',path:'MAHome'} ,
+          {title:'payment.payment',path:'MAPayment'} ,
+          {title:'profile.profile',path:'MAProfile'}
       ],
       current:0,
   }),

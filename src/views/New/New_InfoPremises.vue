@@ -1,7 +1,7 @@
 <template>
   <div class="content-div content-div-1">
     <div class="header">
-      <h1>{{$t('application_for_new_issue_of_a_liquor_licence')}}</h1>
+      <h1>Application for New Issue of a Liquor Licence</h1>
       <div class="d-flex align-center">
         <BoldLine
           :options="{
@@ -19,7 +19,7 @@
       <div class="form-div">
         <v-form v-model="form.valid">
           <h2 class="purple-header em-26">A. {{$t('basic_information')}}</h2>
-          <h5 class="mt-8">1 . {{$t('shop_sign')}}</h5>
+          <h5 class="mt-8">1 . Shop Sign</h5>
           <div class="form-section ml-6">
             <v-text-field
               class="tf-half"
@@ -185,7 +185,8 @@
             ></v-text-field>
           </div>
           <h5 class="mt-2">
-            4 . {{$t('size')}}
+            4 . Size of Premises (by reference to floor area inside the
+            premises)
           </h5>
           <div class="form-section mt-3 justify-start align-baseline ml-6">
             <v-text-field

@@ -88,13 +88,13 @@
             !(partTwo[partOne.selected].selected === undefined) &&
             partTwo[partOne.selected].selected === 2 &&
             partThreeButtons[partOne.selected][partTwo[partOne.selected].selected].length > 0" class="form-type-reminder">
-              <hgroup> {{$t('reminder_1')}}</hgroup>
+              Reminder: New Application for Nomination of Reserve Licensee can only be applied with application for new issue/ renewal/ transfer of liquor licence/ club liquor licence.
             </div>
             <div v-if="i === 3 && partOne.selected === 0 &&
             !(partTwo[partOne.selected].selected === undefined) &&
             partTwo[partOne.selected].selected === 3 &&
             partThreeButtons[partOne.selected][partTwo[partOne.selected].selected].length > 0" class="form-type-reminder">
-              <hgroup> {{$t('reminder_2')}}</hgroup>
+              Reminder: You may fill in the Authorisation form after the nomination has been approved.
             </div>
           </template>
         </v-btn-toggle>
@@ -142,7 +142,6 @@
           "
             group
             tile
-
         >
           <v-btn
               v-for="(item, i) in partThreeButtons[partOne.selected][
@@ -202,7 +201,7 @@ export default {
           this.$t('new_licence'),
           this.$t('licence_transfer'),
           this.$t('application_to_nomination_of_reserve_licensee'),
-          this.$t('application_for_authorisation_of_a_nominated_reserve_licensee'),
+          "Application for Authorisation of a Nominated Reserve Licensee",
           this.$t('temporary_absence'),
           this.$t('licence_amendment'),
           this.$t('change_information'),

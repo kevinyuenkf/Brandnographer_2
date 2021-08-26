@@ -4,14 +4,14 @@
       <template v-slot:activator="{ on, attrs }">
           <v-btn class="menu-btn" v-bind="attrs" v-on="on" depressed @click="menu_active=!menu_active" v-click-outside="onClickOutside">
               <BoldLine id="bold-line" :options="{color:$vuetify.theme.themes.light.secondary,height:'30px',width:'4px'}"></BoldLine>
-              <h1>{{tabs[selected].title}}</h1>
+              <h1>{{$t(tabs[selected].title)}}</h1>
               <v-spacer></v-spacer>
               <v-icon :class="menu_active? 'rotate-90':'rotate-0'" v-text="'mdi-chevron-right'" color="white"></v-icon>
           </v-btn>
       </template>
       <div class="py-4">
         <div class="tabs-item" v-ripple v-for="(item,i) in tabs" :key="i" :class="selected == i?'active':''" @click="$emit('itemOnclick',item.path,i)" >
-          {{item.title}}
+          {{$t(item.title)}}
         </div>
         <BoldLine id="bold-line " class="my-4" :options="{color:'#eaeaea',height:'3px',width:'100%'}"></BoldLine>
         <h5>Please choose application form</h5>

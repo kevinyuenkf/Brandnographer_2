@@ -44,7 +44,7 @@ export default {
   },
   data: () => ({
       steps:[
-        {title:'application_progress',view:'NewTac',editable:true},{title:'information_relating_to_the_premises',view:'NewInfoPremises',editable:true},
+        {title:'terms_and_conditions',view:'NewTac',editable:true},{title:'information_relating_to_the_premises',view:'NewInfoPremises',editable:true},
         {title:'infoApplicant',view:'NewInfoApplicant',editable:true},{title:'information_relating_to_management',view:'NewInfoManagement',editable:true},
         {title:'mode_of_operation',view:'NewModeOp',editable:true},{title:'upload_document',view:'NewUploadDoc',editable:true},{title:'identity',view:'NewIdentityAuth',editable:true},
         {title:'confirmation',view:'NewConfirmation',editable:true},{title:'your_submitted',view:'NewSubmitted',editable:false},

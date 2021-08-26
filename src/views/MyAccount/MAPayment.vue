@@ -4,42 +4,42 @@
       <div class="hidden-md-and-down header" >
         <div class="d-flex justify-center flex-column">
           <div class="d-flex justify-end mt-n2">
-            <h5 class="ma-0 fw-400" style="color:white">User :  Brandnographer2</h5>
+            <h5 class="ma-0 fw-400" style="color:white">{{$t('profile.user')}}Brandnographer2</h5>
           </div>
           <div class="d-flex mt-n3">
             <BoldLine :options="{color:this.$vuetify.theme.themes.light.secondary,height:'auto',width:'6px'}" :spacing="'x-stretch'"></BoldLine>
-            <h2>Payment</h2>
+            <h2>{{ $t('payment.payment')}}</h2>
           </div>
         </div>
       </div>
       <div class="body">
-        <p>To make payment, please click the “Pay” button direct. You can choose to pay through PPSB service or by credit card online.</p>
-        <p>Payment records will be retained for 12 months from their payment dates after which the relevant messages may be automatically deleted.</p>
-        <h2>Payment record (including application pending payment)</h2>
+        <p>{{ $t('payment.a_1') }}</p>
+        <p>{{ $t('payment.a_2') }}</p>
+        <h2>{{ $t('payment.a_3') }}</h2>
           
       </div>
       <div class='o-table mb-2 '>
             <div class="o-tabs-card mt-6 mb-12" v-if="selected==0">
               <div class="top-header">
-                <h3>ABC Bar</h3>
-                <h5>Reference No: llps1234_2345555-12122</h5>
+                <h3>{{ $t('payment.bar')}}</h3>
+                <h5>{{$t('payment.ref_no')}} llps1234_2345555-12122</h5>
               </div>
               <div class="sec-header">
-                <h6>Application Type</h6>
-                <h6>Received Date</h6>
-                <h6>Amount</h6>
+                <h6>{{ $t('payment.a_4') }}</h6>
+                <h6>{{ $t('payment.a_5') }}</h6>
+                <h6>{{ $t('payment.a_6') }}</h6>
               </div>
               <div class="content-container" v-for="(item,i) in payment_items" :key="i">
                 <div class="content">
-                  <div>{{item.type}}</div>
+                  <div>{{ $t(item.type)}}</div>
                   <div class="d-flex align-center">
-                    <div>{{item.date}}</div>
+                    <div>{{$t(item.date)}}</div>
                   </div>
                   <div>
-                    <h6>{{item.amount}}</h6>
+                    <h6>{{$t(item.amount)}}</h6>
                   </div>
                   <div>
-                    <v-btn depressed class="o-btn-action rounded-pill mt-4 small ml-4" color="primary">Pay Now</v-btn>
+                    <v-btn depressed class="o-btn-action rounded-pill mt-4 small ml-4" color="primary">{{ $t('payment.a_7') }}</v-btn>
                   </div>
                 </div>
               </div>
@@ -47,7 +47,7 @@
             </div>
       </div>
       <div class="body py-0"> 
-        <router-link class="no-dec" :to="{ name: 'MAHome'}"><v-btn depressed class="o-btn-action rounded-pill mt-2 mr-5 mb-8" color="#413E56" dark>Back</v-btn></router-link>
+        <router-link class="no-dec" :to="{ name: 'MAHome'}"><v-btn depressed class="o-btn-action rounded-pill mt-2 mr-5 mb-8" color="#413E56" dark>{{ $t('payment.a_8') }}</v-btn></router-link>
       </div>
     </div>
   </div>
@@ -73,16 +73,16 @@ export default {
       infoError:true, // true: red callout, false:purple callout(6-2-1)
       menu:false,menu_1:false,menu_2:false,
       items : [
-        { title: 'Application Submitted', remark: ' ', active : true, },
-        { title: 'Department Feedback', remark: ' ', active : true, }, // true: 6-3-2
-        { title: 'Verifiy Documents', remark: ' ', active : false, },
-        { title: 'Seek Approval', remark: ' ', active : false, },
-        { title: 'Licence Ready', remark: ' ', active : false, },
-        { title: 'Licence Issued', remark: ' ', active : false, },
+        { title: 'application_submitted', remark: ' ', active : true, },
+        { title: 'department_feedback', remark: ' ', active : true, }, // true: 6-3-2
+        { title: 'documents_verified', remark: ' ', active : false, },
+        { title: 'seek_approval', remark: ' ', active : false, },
+        { title: 'licence_ready', remark: ' ', active : false, },
+        { title: 'licence_issued', remark: ' ', active : false, },
       ],
       items_current:1, // 1: 6-3-2
       payment_items:[
-        {type:'New Liquor Licence 2021-2022',date:'2021-01-01 13:00',amount:'1,999.00'}
+        {type:'payment.new_lqiuor_licence_2021_2022',date:'2021-01-01 13:00',amount:'1,999.00'}
       ],
       
     }

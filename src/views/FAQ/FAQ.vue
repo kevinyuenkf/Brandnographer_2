@@ -24,8 +24,8 @@ export default {
   },
   data: () => ({
       btns:[
-          {title:'Digital Certificates and Authentication',path:'FAQDca'},
-          {title:'Online Payment',path:'FAQOnlineP'}
+          {title:'digital_certificates_and_authentication',path:'FAQDca'},
+          {title:'online_payment',path:'FAQOnlineP'}
       ],
       current:0,
   }),

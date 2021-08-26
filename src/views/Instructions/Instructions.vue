@@ -1,7 +1,7 @@
 <template>
   <div class="main-container">
-        <SideMenuLarge class="side-menu-large hidden-md-and-down" :toggle="current" :title="$t('application_instructions')" :btns="btns" @itemOnclick="routeSubviewTo"></SideMenuLarge>
-        <SideMenuSmall class="hidden-lg-and-up" :toggle="current" :title="$t('application_instructions')" :btns="btns" @itemOnclick="routeSubviewTo"></SideMenuSmall>      
+    <SideMenuLarge class="side-menu-large hidden-md-and-down" :toggle="current" :title="$t('application_instructions')" :btns="btns" @itemOnclick="routeSubviewTo"></SideMenuLarge>
+        <SideMenuSmall class="hidden-lg-and-up" :toggle="current" :title="$t('application_instructions')" :btns="btns" @itemOnclick="routeSubviewTo"></SideMenuSmall>   
         <div class="router-div">
           <router-view/>
         </div>
@@ -24,7 +24,7 @@ export default {
   },
   data: () => ({
       btns:[
-          {title: 'application_overview',path:'InOverview'} ,
+        {title: 'application_overview',path:'InOverview'} ,
           {title:'application_demo',path:'InDemo'} ,
           {title:'application_procedures',path:'InProcedures'} ,
           {title:'application_guideline',path:'InGuideline'} ,
