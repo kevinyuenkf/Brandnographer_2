@@ -1,6 +1,6 @@
 <template>
   <div class="base-div">
-    <h3>{{title}}</h3>
+    <h3>{{$t(title)}}</h3>
     <div class="stepper-gp">
       <div v-for="(item,i) in steps_temp.slice(0, -1)" :key="i" class="step-div">
         <OLSStep :order="i+1" :title="item.title" :editable="item.editable" :state="updateState(i+1)" @itemOnclick="stepClickedCall"></OLSStep>

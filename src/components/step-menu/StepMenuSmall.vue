@@ -1,7 +1,7 @@
 <template >
   <div class="base-div">
     <div class="header-div d-flex">
-      <h1>{{title}}</h1>
+      <h1>{{$t(title)}}</h1>
     </div>
     <v-menu transition="slide-x-transition" offset-y >
       <template v-slot:activator="{ on, attrs }">
@@ -11,7 +11,7 @@
               <div class="step-div-slot">
                 <div class="circle">
                   <p v-if="current === steps_temp.length"><v-icon style="font-size:20px" color="#FFFFFF">mdi-check</v-icon></p>
-                  <p v-else>{{current}}</p>
+                  <p v-else>{{$t(current)}}</p>
                 </div>
                 <p class="label">{{steps_temp[current-1].title}}</p>
               </div>

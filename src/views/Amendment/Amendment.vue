@@ -23,7 +23,7 @@ export default {
   },
   data: () => ({
       steps:[
-        {title:'Terms and Conditions',editable:false},{title:'Information of Applicant',editable:false},
+        {title:'terms_and_conditions',editable:false},{title:'Information of Applicant',editable:false},
         {title:'Information Relating to the Premises',editable:false},{title:'Mode of Operation',editable:false},
         {title:'Upload Documents',editable:false},{title:'Identity Authentication',editable:false},{title:'Confirmation of Application',editable:false},
       ],

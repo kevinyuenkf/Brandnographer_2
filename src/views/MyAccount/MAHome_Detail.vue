@@ -246,7 +246,7 @@ export default {
       menu:false,menu_1:false,menu_2:false,
       btnDisabled:true,
       items : [
-        { title: 'Application Submitted', remark: ' ', active : true, },
+        { title: ' confirmation', remark: ' ', active : true, },
         { title: 'Department Feedback', remark: ' ', active : true, arrow: true}, // true: 6-3-2
         { title: 'Verify Documents', remark: ' ', active : false, },
         { title: 'Seek Approval', remark: ' ', active : false, },

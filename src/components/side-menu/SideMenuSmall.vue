@@ -7,7 +7,7 @@
     <v-menu v-if="btns.length>0" transition="slide-x-transition" offset-y >
       <template v-slot:activator="{ on, attrs }">
           <v-btn class="menu-btn" v-bind="attrs" v-on="on" depressed @click="active=!active" v-click-outside="onClickOutside">
-              <span class="rem-1-125">{{btns[selected].title}}</span>
+              <span class="rem-1-125">{{$y(btns[selected].title)}}</span>
               <v-spacer></v-spacer>
               <v-icon :class="active? 'rotate-90':'rotate-0'" v-text="'mdi-chevron-right'" color="white"></v-icon>
           </v-btn>

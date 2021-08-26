@@ -3,7 +3,7 @@
     <h1>{{title}}</h1>
     <BoldLine id="bold-line" :options="{color:'#F76553',height:'6px',width:'45px'}">123</BoldLine>
     <v-btn-toggle v-model="selected" tile group mandatory>
-      <v-btn v-for="(btn,i) in btns" :key="i" class="side-menu-btn" depressed @click="$emit('itemOnclick',btn.path,i)" >{{btn.title}}</v-btn>
+      <v-btn v-for="(btn,i) in btns" :key="i" class="side-menu-btn" depressed @click="$emit('itemOnclick',btn.path,i)" >{{$t(btn.title)}}</v-btn>
     </v-btn-toggle>
   </div>
 </template>

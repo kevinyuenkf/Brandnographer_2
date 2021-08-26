@@ -6,7 +6,7 @@
           <v-icon v-if="state==2" dense >mdi-check</v-icon>
         </div>
         <div class="vertical_line"></div>
-        <div class="label">{{title}}</div>
+        <div class="label">{{$t(title)}}</div>
       </div>
     </v-btn>
 </template>

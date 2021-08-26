@@ -44,10 +44,10 @@ export default {
   },
   data: () => ({
       steps:[
-        {title:'Terms and Conditions',view:'NewTac',editable:true},{title:'Information Relating to the Premises',view:'NewInfoPremises',editable:true},
-        {title:'Information of Applicant',view:'NewInfoApplicant',editable:true},{title:'Information Relating to Management',view:'NewInfoManagement',editable:true},
-        {title:'Mode of Operation',view:'NewModeOp',editable:true},{title:'Upload Documents',view:'NewUploadDoc',editable:true},{title:'Identity Authentication',view:'NewIdentityAuth',editable:true},
-        {title:'Confirmation of Application',view:'NewConfirmation',editable:true},{title:'Your Application is submitted',view:'NewSubmitted',editable:false},
+        {title:'application_progress',view:'NewTac',editable:true},{title:'information_relating_to_the_premises',view:'NewInfoPremises',editable:true},
+        {title:'infoApplicant',view:'NewInfoApplicant',editable:true},{title:'information_relating_to_management',view:'NewInfoManagement',editable:true},
+        {title:'mode_of_operation',view:'NewModeOp',editable:true},{title:'upload_document',view:'NewUploadDoc',editable:true},{title:'identity',view:'NewIdentityAuth',editable:true},
+        {title:'confirmation',view:'NewConfirmation',editable:true},{title:'your_submitted',view:'NewSubmitted',editable:false},
       ],
       current:1,
       target:undefined,

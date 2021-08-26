@@ -24,12 +24,12 @@ export default {
   },
   data: () => ({
       btns:[
-          {title: 'Application Overview',path:'InOverview'} ,
-          {title:'Application Demo',path:'InDemo'} ,
-          {title:'Application Procedures',path:'InProcedures'} ,
-          {title:'Assessment Guideline ',path:'InGuideline'} ,
-          {title:'Download Form',path:'InForm'} ,
-          {title:'Account Policy',path:'InPolicy'} ,
+          {title: 'application_overview',path:'InOverview'} ,
+          {title:'application_demo',path:'InDemo'} ,
+          {title:'application_procedures',path:'InProcedures'} ,
+          {title:'application_guideline',path:'InGuideline'} ,
+          {title:'application_form',path:'InForm'} ,
+          {title:'application_policy',path:'InPolicy'} ,
       ],
       current:0,
   }),

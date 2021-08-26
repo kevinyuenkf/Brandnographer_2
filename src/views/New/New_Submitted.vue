@@ -19,9 +19,9 @@
             <div class="d-flex flex-column box">
               <v-icon v-if="item.active" style="font-size:40px" color="primary">mdi-check-circle</v-icon>
               <v-icon v-if="!item.active" style="font-size:40px" color="#E0E0E0">mdi-checkbox-blank-circle</v-icon>
-              <div class="d-flex"><h5 class="mb-2" style="text-align:center;" :class="item.active? 'step-active' : ''">{{item.title}}</h5></div>
+              <div class="d-flex"><h5 class="mb-2" style="text-align:center;" :class="item.active? 'step-active' : ''">{{$t(item.title)}}</h5></div>
 
-              <h5 v-if="item.remark != ''" class="em-16 fw-400">{{item.remark}}</h5>
+              <h5 v-if="item.remark != ''" class="em-16 fw-400">{{$t(item.remark)}}</h5>
               <h5 v-if="item.remark ==''" class="em-16 fw-400" style="color:transparent">*</h5>
             </div>
             <div class="connector" :style="!item.active?{borderColor:'#E0E0E0'} :{}"></div>
@@ -48,12 +48,12 @@ export default {
   data: function () {
     return {
       items : [
-        { title: 'Application Submitted', remark: '', active : true, },
-        { title: 'Department Feedback', remark: '', active : false, },
-        { title: 'Documents Verified', remark: '', active : false, },
-        { title: 'Seek Approval', remark: '', active : false, },
-        { title: 'Licence Ready', remark: '* Proceed to payment', active : false, },
-        { title: 'Licence Issued', remark: '', active : false, },
+        { title: 'application_submitted', remark: '', active : true, },
+        { title: 'department_feedback', remark: '', active : false, },
+        { title: 'documents_verified', remark: '', active : false, },
+        { title: 'seek_approval', remark: '', active : false, },
+        { title: 'licence_ready', remark: 'proceed_to_payment', active : false, },
+        { title: 'licence_issued', remark: '', active : false, },
       ]
 
     }
