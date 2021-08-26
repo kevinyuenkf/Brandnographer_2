@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="39px" viewBox="0 0 39 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 4</title>
+    <defs>
+        <polygon id="path-1" points="0 0 17 0 17 13 0 13"></polygon>
+    </defs>
+    <g id="screen" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4-6-1_new_step_4_invitation_email" transform="translate(-79.000000, -351.000000)">
+            <g id="Group-4" transform="translate(79.000000, 351.000000)">
+                <circle id="Oval-Copy" fill="#ff6785" cx="19.5" cy="19.5" r="19.5"></circle>
+                <g id="Group-3-Copy-2" transform="translate(10.000000, 14.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M0,7.3093672 C0.759776536,6.4896802 1.49877793,5.68768428 2.24965084,4.87979134 C3.56442039,6.07393967 4.87028631,7.25629394 6.1672486,8.43864822 C9.01047486,5.61397142 11.8388617,2.80108868 14.658345,0 C15.4596718,0.793150374 16.2372556,1.56860966 17,2.32637786 C13.4296439,5.87049218 9.85631983,9.42345203 6.25628492,13 C4.19361034,11.1188478 2.10422486,9.22000454 0,7.3093672" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
