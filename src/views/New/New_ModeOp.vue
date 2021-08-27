@@ -14,7 +14,7 @@
           <h2 class="purple-header em-26">F. Nature of Business</h2>
             <div class="d-flex mt-n2">
               <h5> 27. </h5>
-              <h5 class="ml-1" >The percentage of revenue generated from liquor selling to the total revenue of the subject premises </h5>
+              <h5 class="ml-1" >The estimated percentage of revenue generated from liquor selling to the total revenue of the subject premises </h5>
             </div>
             <div class="form-section mt-3 justify-start align-baseline" >
               <v-text-field class="tf-half mr-2" v-model="operation_data.q27" :rules="form.fullnameRules"  label="" outlined required></v-text-field>
@@ -117,7 +117,7 @@
             <h2 class="purple-header em-26">G. Operation Hours</h2>
 
             <div class="mt-1 mb-1 d-flex align-center">
-              <h5>31 .  Business and Management Related Information</h5>
+              <h5>31 .  The opening hours of the establishment are</h5>
               <v-tooltip right >
                 <template v-slot:activator="{ on, attrs }">
                   <v-icon class="mt-2 ml-3 " color="secondary" dark v-bind="attrs" v-on="on">
@@ -444,8 +444,8 @@
           </div>
           <h5 class="mt-3 ml-7">I have known the above referee for a period of </h5>
           <div class="form-section mt-n2 ml-7 mb-8">
-            <v-select  v-model="operation_data.referee[0].period.years" class="tf-half mt-2" :items="[0,1,2,3,4,5,6,7,8,9,'10 or above']" label="No. of years" outlined :menu-props="{offsetY: true}"></v-select>
-            <v-select  v-model="operation_data.referee[0].period.months" class="tf-half mt-2" :items="[0,1,2,3,4,5,6,7,8,9,10,11,12]" label="No. of months" outlined :menu-props="{offsetY: true}"></v-select>
+            <v-select  v-model="operation_data.referee[0].period.years" class="tf-half mt-2" :items="[0,1,2,3,4,5,6,7,8,9,'10 or above']" label="year(s)" outlined :menu-props="{offsetY: true}"></v-select>
+            <v-select  v-model="operation_data.referee[0].period.months" class="tf-half mt-2" :items="[0,1,2,3,4,5,6,7,8,9,10,11,12]" label="month(s)" outlined :menu-props="{offsetY: true}"></v-select>
           </div>
           <h2 class="mt-0 ml-7">Referee 2</h2>
           <h5 class="mt-2 ml-7">Name </h5>
@@ -474,8 +474,8 @@
           </div>
           <h5 class="mt-3 ml-7">I have known the above referee for a period of </h5>
           <div class="form-section mt-n2 ml-7 mb-8">
-            <v-select v-model="operation_data.referee[1].period.years" class="tf-half mt-2" :items="[0,1,2,3,4,5,6,7,8,9,'10 or above']" label="No. of years" outlined :menu-props="{offsetY: true}"></v-select>
-            <v-select v-model="operation_data.referee[1].period.months" class="tf-half mt-2" :items="[0,1,2,3,4,5,6,7,8,9,10,11,12]" label="No. of months" outlined :menu-props="{offsetY: true}"></v-select>
+            <v-select v-model="operation_data.referee[1].period.years" class="tf-half mt-2" :items="[0,1,2,3,4,5,6,7,8,9,'10 or above']" label="year(s)" outlined :menu-props="{offsetY: true}"></v-select>
+            <v-select v-model="operation_data.referee[1].period.months" class="tf-half mt-2" :items="[0,1,2,3,4,5,6,7,8,9,10,11,12]" label="month(s)" outlined :menu-props="{offsetY: true}"></v-select>
           </div>
         </v-form>
       </div>

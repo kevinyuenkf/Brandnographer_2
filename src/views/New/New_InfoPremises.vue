@@ -283,7 +283,7 @@
           >
             <v-radio
               class="enhanced"
-              :label="'a .  The type pf restaurant licence'"
+              :label="'a .  The type of restaurant licence'"
               :value="'a'"
             ></v-radio>
             <v-radio-group
