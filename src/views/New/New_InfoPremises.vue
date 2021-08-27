@@ -217,10 +217,10 @@
               {{$t('br_number_2')}}
             </h5>
             <v-radio-group v-model="premises_data.q5b" class="ml-6" row>
-              <v-radio class="row-radio" :label="'Yes'" :value="true"></v-radio>
+              <v-radio class="row-radio" :label="$t('yes')" :value="true"></v-radio>
               <v-radio
                 class="row-radio ml-3"
-                :label="'No'"
+                :label="$t('no')"
                 :value="false"
               ></v-radio>
             </v-radio-group>
@@ -232,7 +232,7 @@
                 class="tf-half"
                 v-model="premises_data.q5b_detail.companyName"
                 :rules="form.fullnameRules"
-                label="Name"
+                :label="$t('name')"
                 outlined
                 required
               ></v-text-field>
@@ -315,7 +315,7 @@
             >
               <v-radio
                 class="mt-5"
-                :label="$t('q6b1')"
+                https://github.com/kevinyuenkf/Brandnographer_2.git    :label="$t('q6b1')"
                 :value="'Issued'"
               ></v-radio>
               <div v-show="premises_data.q6b == 'Issued'">

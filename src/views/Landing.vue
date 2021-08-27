@@ -201,7 +201,7 @@ export default {
           this.$t('new_licence'),
           this.$t('licence_transfer'),
           this.$t('application_to_nomination_of_reserve_licensee'),
-          "Application for Authorisation of a Nominated Reserve Licensee",
+          this.$t("downloadForm.content_22"),
           this.$t('temporary_absence'),
           this.$t('licence_amendment'),
           this.$t('change_information'),

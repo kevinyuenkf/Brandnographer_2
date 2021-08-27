@@ -221,7 +221,7 @@ export default {
         subheader: "Language",
         isFontsize: false,
         selectedItem: 0,
-        items: [{ text: "EN", lang: "EN" }, { text: "TC", lang: "TC" }],
+        items: [{ text: "EN", lang: "EN" }, { text: "繁體中文", lang: "TC" }],
       },
     },
     fontsize: {

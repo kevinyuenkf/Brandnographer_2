@@ -3,6 +3,7 @@ export default {
     highlights: {
         approachable: 'test'
     },
+    
     online_licence_service: '網上牌照服務',
     services: '服務',
     application_instructions: '如何申請',
@@ -203,6 +204,7 @@ export default {
     premises:'處所資料',
     br_number: 'a. 上述處所的商業登記號碼：',
     br_number_2: 'b. 如上述處所是由公司經營：',
+    name: '姓名',
     q5bi: '公司名稱',
     q5b2:'公司的商業登記號碼',
     q5b3:'公司編號（如有）',

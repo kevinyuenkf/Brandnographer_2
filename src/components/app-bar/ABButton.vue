@@ -6,7 +6,7 @@
             <v-icon v-text="'mdi-menu-down'" class="ml-0" color="primary" dense ></v-icon>
         </v-btn>
         <v-btn text v-bind="attrs" v-on="on" v-if="!dataset.isFontsize">
-            <span class="rem-1-125">{{dataset.text}}</span>
+            <span class="rem-1-125">{{$t(dataset.text)}}</span>
             <v-icon v-text="'mdi-menu-down'" dense color="primary"></v-icon>
         </v-btn>
     </template>

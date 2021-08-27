@@ -1,6 +1,6 @@
 <template>
   <div class="py-2 px-3 rounded" v-ripple v-bind:class="{toggled:isToggled}">
-      <h3>{{title}}</h3>
+      <h3>{{$t(title)}}</h3>
       <div></div>
   </div>
 </template>

@@ -203,6 +203,7 @@ export default {
     premises:'Premises Details',
     br_number: 'a. Business Registration No. of the premises',
     br_number_2: 'b. If the premises is run by a company',
+    name: 'Name',
     q5bi: 'Name of company',
     q5b2:'Business Registration No. of the company',
     q5b3:'Company No. (if available)',
