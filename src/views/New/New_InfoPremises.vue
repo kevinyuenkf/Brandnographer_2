@@ -1,7 +1,7 @@
 <template>
   <div class="content-div content-div-1">
     <div class="header">
-      <h1>Application for New Issue of a Liquor Licence</h1>
+      <h1>{{$t('application_for_new_issue_of_a_liquor_licence')}}</h1>
       <div class="d-flex align-center">
         <BoldLine
           :options="{
@@ -19,13 +19,13 @@
       <div class="form-div">
         <v-form v-model="form.valid">
           <h2 class="purple-header em-26">A. {{$t('basic_information')}}</h2>
-          <h5 class="mt-8">1 . Shop Sign</h5>
+          <h5 class="mt-8">1 . {{$t('shop_sign')}}</h5>
           <div class="form-section ml-6">
             <v-text-field
               class="tf-half"
               v-model="premises_data.shopSign.chinese"
               :rules="form.fullnameRules"
-              label="Chinese"
+              :label="$t('chinese')"
               outlined
               required
             ></v-text-field>
@@ -33,13 +33,13 @@
               class="tf-half"
               v-model="premises_data.shopSign.english"
               :rules="form.fullnameRules"
-              label="English"
+              :label="$t('english')"
               outlined
               required
             ></v-text-field>
           </div>
           <div class="mt-n1 mb-4 d-flex align-center">
-            <h5>2 . Address</h5>
+            <h5>2 . {{$t('address')}}</h5>
             <v-tooltip right>
               <template v-slot:activator="{ on, attrs }">
                 <v-icon
@@ -55,7 +55,7 @@
               <div>
                 <div class="d-flex align-center mb-2">
                   <v-icon color="secondary" dark> mdi-help-circle </v-icon>
-                  <h3 class="mb-0">Tips:</h3>
+                  <h3 class="mb-0">{{$t('tips')}}</h3>
                 </div>
                 <div class="ml-8 c-div">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -68,9 +68,7 @@
           </div>
           <div class="callout-div detail-box">
             <h5 class="fw-400 em-18 ml-3 mb-3 mt-1">
-              If you have a restaurant licence, the address here shall be the
-              same as that on the restaurant licence. By entering the restaurant
-              licence no. to fill the related information.
+             {{$t('address_note')}}
             </h5>
             <MultipleTextfield
               class="mt-3 ml-3"
@@ -85,17 +83,17 @@
 
             <div class="d-flex align-baseline flex-wrap mt-n7 t-wrap">
               <h5 h5 class="fw-400 em-18 ml-3 ma-0 mr-3 mt-6">
-                Copy information from restaurant licnece
+               {{$t('address_note1')}}
               </h5>
               <v-btn
                 depressed
                 class="o-btn-action rounded-pill xs mb-3 mt-3 ml-3"
                 color="primary"
-                >Copy</v-btn
+                >{{$t('copy')}}</v-btn
               >
             </div>
           </div>
-          <h5 class="mt-8 ml-6">a. Chinese</h5>
+          <h5 class="mt-8 ml-6">a. {{$t('chinese')}}</h5>
           <div class="form-section ml-6">
             <v-text-field
               class="tf-full mt-2"
@@ -130,7 +128,7 @@
               :menu-props="{offsetY: true}"
             ></v-select>
           </div>
-          <h5 class="mt-3 ml-6">b. English</h5>
+          <h5 class="mt-3 ml-6">b. {{$t('english')}}</h5>
           <div class="form-section ml-6">
             <v-text-field
               class="tf-full mt-2"
@@ -165,13 +163,13 @@
               :menu-props="{offsetY: true}"
             ></v-select>
           </div>
-          <h5 class="mt-2">3 . Contact</h5>
+          <h5 class="mt-2">3 . {{$t('contact')}}</h5>
           <div class="form-section ml-6">
             <v-text-field
               class="tf-half"
               v-model="premises_data.contact.tel"
               :rules="form.fullnameRules"
-              label="Tel no."
+              :label="$t('tel_no')"
               outlined
               required
             ></v-text-field>
@@ -179,30 +177,29 @@
               class="tf-half"
               v-model="premises_data.contact.fax"
               :rules="form.fullnameRules"
-              label="Fax no."
+              :label="$t('fax_no')"
               outlined
               required
             ></v-text-field>
           </div>
           <h5 class="mt-2">
-            4 . Size of Premises (by reference to floor area inside the
-            premises)
+            4 . {{$t('size')}}
           </h5>
           <div class="form-section mt-3 justify-start align-baseline ml-6">
             <v-text-field
               class="tf-half mr-4"
               v-model="premises_data.size"
               :rules="form.fullnameRules"
-              label="Size"
+              :label="$t('size_a')"
               outlined
               required
             ></v-text-field>
-            <p class="mb-0">m²</p>
+            <p class="mb-0">{{$t('size_b')}}</p>
           </div>
 
-          <h5 class="mt-3">5 . Premises Details</h5>
+          <h5 class="mt-3">5 . {{$t('premises')}}</h5>
           <h5 class="mt-3 mb-5 ml-6 fw-400 em-18">
-            a. Business Registration No. of the premises
+          {{$t('br_number')}}
           </h5>
           <div class="form-section ml-6">
             <MultipleTextfield
@@ -217,7 +214,7 @@
           </div>
           <div class="mt-1 mb-4 ml-6 d-flex align-center flex-wrap">
             <h5 class="my-0 fw-400 em-18">
-              b. If the premises is run by a company
+              {{$t('br_number_2')}}
             </h5>
             <v-radio-group v-model="premises_data.q5b" class="ml-6" row>
               <v-radio class="row-radio" :label="'Yes'" :value="true"></v-radio>
@@ -229,7 +226,7 @@
             </v-radio-group>
           </div>
           <div v-if="premises_data.q5b == true">
-            <h5 class="my-0 fw-400 em-18 ml-10">b (i). Name of company</h5>
+            <h5 class="my-0 fw-400 em-18 ml-10">b (i). {{$t('q5bi')}}</h5>
             <div class="form-section ml-10 mt-5">
               <v-text-field
                 class="tf-half"
@@ -241,7 +238,7 @@
               ></v-text-field>
             </div>
             <h5 class="my-0 fw-400 em-18 ml-10">
-              b (ii). Business Registration No. of the company
+              b (ii). {{$t('q5b2')}}
             </h5>
             <MultipleTextfield
               class="ml-10 mt-5"
@@ -254,7 +251,7 @@
               @onInputDone="updateCompanyBrMTF"
             ></MultipleTextfield>
             <h5 class="my-0 fw-400 em-18 ml-10">
-              b (iii). Company No. (if available)
+              b (iii). {{$t('q5b3')}}
             </h5>
             <MultipleTextfield
               class="ml-10 mt-5"
@@ -268,13 +265,12 @@
             ></MultipleTextfield>
           </div>
           <h2 class="purple-header em-26">
-            B. Information Relating to Restaurant Licence
+            {{$t('info_rel_rest_lic')}}
           </h2>
           <div class="d-flex">
             <h5>6.</h5>
             <h5 class="ml-1">
-              The type of restaurant licence issued/ being applied for the
-              premises under application for liquor licence?
+              {{$t('q6')}}
             </h5>
           </div>
           <v-radio-group
@@ -283,7 +279,7 @@
           >
             <v-radio
               class="enhanced"
-              :label="'a .  The type of restaurant licence'"
+              :label="$t('q6a')"
               :value="'a'"
             ></v-radio>
             <v-radio-group
@@ -293,23 +289,23 @@
             >
               <v-radio
                 class="mt-5"
-                :label="'Light Refreshment Restaurant Licence '"
+                :label="$t('q6a1')"
                 :value="'Light'"
               ></v-radio>
               <v-radio
                 class="mt-5"
-                :label="'General Restaurant Licence'"
+                :label="$t('q6a2')"
                 :value="'General'"
               ></v-radio>
               <v-radio
                 class="mt-5"
-                :label="'Marine Restaurant Licence'"
+                :label="$t('q6a2')"
                 :value="'Marine'"
               ></v-radio>
             </v-radio-group>
             <v-radio
               class="enhanced mt-8"
-              :label="'b .  The restaurant licence issued/ being applied'"
+              :label="$t('q6b')"
               :value="'b'"
             ></v-radio>
             <v-radio-group
@@ -319,7 +315,7 @@
             >
               <v-radio
                 class="mt-5"
-                :label="'Issued with Licence'"
+                :label="$t('q6b1')"
                 :value="'Issued'"
               ></v-radio>
               <div v-show="premises_data.q6b == 'Issued'">
@@ -327,18 +323,18 @@
                   <div class="d-flex">
                     <v-radio
                       class="row-radio mb-0"
-                      :label="'Full Licence'"
+                      :label="$t('q6b1_1')"
                       :value="'Full'"
                     ></v-radio>
                     <v-radio
                       class="row-radio ml-3"
-                      :label="'Provisional Licence'"
+                      :label="$t('q6b1_2')"
                       :value="'Provisional'"
                     ></v-radio>
                   </div>
                 </v-radio-group>
                 <h5 class="my-0 fw-400 em-18 ml-10 mt-4">
-                  Restaurant Licence Number
+                  {{$t('q6b1_3')}}
                 </h5>
                 <MultipleTextfield
                   class="ml-10 mt-5"
@@ -354,18 +350,18 @@
               </div>
               <v-radio
                 class="mt-5"
-                :label="'Being Applied'"
+                :label="$t('q6b2')"
                 :value="'being-applied'"
               ></v-radio>
               <div v-show="premises_data.q6b == 'being-applied'">
                 <h5 class="my-0 fw-400 em-18 ml-10 mt-5">
-                  File Ref. of Restaurant Licence Application
+                  {{$t('q6b2_1')}}
                 </h5>
                 <v-text-field
                   class="tf-half ml-10 mt-5"
                   v-model="premises_data.q6b_b_fileRef"
                   :rules="form.fullnameRules"
-                  label="File Ref."
+                  :label="$t('q6b2_2')"
                   outlined
                   required
                 ></v-text-field>
@@ -373,12 +369,8 @@
               <v-radio :value="'Not'" class="mt-5">
                 <template slot="label">
                   <span
-                    >Not under application for or covered by a Restaurant
-                    Licence or a Certificate of Compliance issued by the Home
-                    Affairs Department <br /><span style="color: #7a7a7a"
-                      >(Please complete
-                      <span style="color: #4e45d1">Annex I</span> and submit
-                      together with the required documents.)</span
+                    >{{$t('q6b3')}}<br /><span style="color: #7a7a7a"
+                      >{{$t('q6b31')}}</span
                     ></span
                   >
                 </template>
@@ -392,20 +384,17 @@
       <div class="form-div">
         <v-form v-model="form.valid">
           <div class="ml-10">
-            <h2 class="mt-0 dec">Annex I</h2>
+            <h2 class="mt-0 dec">{{$t('annex.annexI')}}</h2>
             <h5 class="mt-2 fw-400 em-18">
-              For liquor licence application in respect of the premises not
-              under application for or covered by a Restaurant Licence or a
-              Certificate of Compliance issued by the Home Affairs Department
+              {{$t('annex.content_1')}}
             </h5>
             <h5 class="mt-2 mt-n2 dec">
-              Additional Information to be Provided
+              {{$t('annex.additional')}}
             </h5>
             <div class="mt-3 d-flex">
               <h5 class="em-18 mr-2">a.</h5>
               <h5 class="em-18">
-                Area of premises for sale or supply of liquor and for
-                consumption of liquor on the premises
+                {{$t('annex.area_premises')}}
               </h5>
             </div>
             <div class="form-section mt-3 justify-start align-baseline ml-6">
@@ -413,86 +402,84 @@
                 class="tf-half mr-4"
                 v-model="premises_data.an_a_size"
                 :rules="form.fullnameRules"
-                label="Size"
+                :label="$t('size_a')"
                 outlined
                 required
               ></v-text-field>
-              <p class="mb-0">m²</p>
+              <p class="mb-0">{{$t('size_b')}}</p>
             </div>
             <h5 class="em-18">
-              b. Installation of Air-conditioning System/Ventilating System:
+              b. {{$t('annex.install_air_con')}}
             </h5>
             <div>
               <v-radio-group v-model="premises_data.an_b.options" class="" row>
                 <div class="d-flex">
                   <v-radio
                     class="row-radio mb-0"
-                    :label="'Yes'"
+                    :label="$t('yes')"
                     :value="true"
                   ></v-radio>
                   <v-radio
                     class="row-radio ml-3"
-                    :label="'No'"
+                    :label="$t('no')"
                     :value="false"
                   ></v-radio>
                 </div>
               </v-radio-group>
-              <h5 class="em-18 fw-400 mb-4">Type (e.g. water-cooled)</h5>
+              <h5 class="em-18 fw-400 mb-4">{{$t('annex.water_cool')}}</h5>
               <v-text-field
                 class="tf-half"
                 v-model="premises_data.an_b.type"
                 :rules="form.fullnameRules"
-                label="Type"
+                :label="$t('type')"
                 outlined
                 required
               ></v-text-field>
             </div>
-            <h5 class="em-18">c. Provision of toilet facilities</h5>
+            <h5 class="em-18">c. {{$t('annex.provision_toilet')}}</h5>
             <v-radio-group
               v-model="premises_data.an_c"
               class="list-radio-gp my-1"
             >
               <v-radio
                 class="mt-2"
-                :label="'Yes, inside the premises'"
+                :label="$t('annex.yes_1')"
                 :value="'Yes_1'"
               ></v-radio>
               <v-radio
                 class="mt-5"
-                :label="'Yes, public facilities at the building'"
+                :label="$t('annex.yes_2')"
                 :value="'Yes_2'"
               ></v-radio>
               <v-radio
                 class="mt-5"
-                :label="'No, no toilet facilities inside the premises or at the building'"
+                :label="$t('annex.no_1')"
                 :value="'No'"
               ></v-radio>
             </v-radio-group>
             <div class="mt-3 d-flex">
               <h5 class="em-18 mr-2">d.</h5>
               <h5 class="em-18">
-                If the premises are under application for or covered by a
-                licence or certificate to be issued/issued by government
-                departments, please specify
+                {{$t('annex.if_licence')}}
               </h5>
             </div>
             <v-text-field
               class="tf-half"
               v-model="premises_data.an_d"
               :rules="form.fullnameRules"
-              label="Licence/Certificate"
+              :label="$t('annex.licence_certificate')"
               outlined
               required
             ></v-text-field>
-            <h5 class="em-18">e. Enclosed</h5>
-            <h5 class="em-18">Please enclose the following documents:</h5>
+            <h5 class="em-18">e. {{$t('annex.enclosed')}}</h5>
+            <h5 class="em-18">{{$t('annex.enclose')}}</h5>
           </div>
         </v-form>
       </div>
       <div class="o-table mb-2">
         <div class="d-flex">
-          <h5 class="em-22 mw-6">Additional Information ( Annex l )</h5>
-          <h5 class="em-22 mw-4">Last Update</h5>
+          <h5 class="em-22 mw-6">{{$t('annex.additional_information')}}</h5>
+          <h5 class="em-22 mw-4">{{$t('annex.last_update')}}</h5>
         </div>
         <BoldLine
           :options="{
@@ -504,7 +491,7 @@
         <div class="d-flex py-5">
           <div class="d-flex mw-6 align-center">
             <div class="o-t-item-div">
-              A copy of proposed layout plan of the premises
+              {{$t('annex.layout_plan')}}
             </div>
             <v-tooltip right>
               <template v-slot:activator="{ on, attrs }">
@@ -521,7 +508,7 @@
               <div>
                 <div class="d-flex align-center mb-2">
                   <v-icon color="secondary" dark> mdi-help-circle </v-icon>
-                  <h3 class="mb-0">Tips:</h3>
+                  <h3 class="mb-0">{{$t('tips')}}</h3>
                 </div>
                 <div class="ml-8 c-div">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -540,15 +527,14 @@
               class="o-btn-action small mr-1 mt-0"
               style="justify-self: flex-start"
               color="primary"
-              >Choose file</v-btn
+              >{{$t('annex.choose_file')}}</v-btn
             >
           </div>
         </div>
         <div class="d-flex py-5">
           <div class="d-flex mw-6 align-center">
             <div class="o-t-item-div">
-              A copy of proposed ventilating system layout plan of the premises
-              with their Supplier Certificate
+              {{$t('annex.ventilation_system')}}
             </div>
             <v-tooltip right>
               <template v-slot:activator="{ on, attrs }">
@@ -565,7 +551,7 @@
               <div>
                 <div class="d-flex align-center mb-2">
                   <v-icon color="secondary" dark> mdi-help-circle </v-icon>
-                  <h3 class="mb-0">Tips:</h3>
+                  <h3 class="mb-0">{{$t('tips')}}</h3>
                 </div>
                 <div class="ml-8 c-div">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -583,15 +569,14 @@
               :disabled="btnDisabled"
               class="o-btn-action small mr-1 mt-0"
               style="justify-self: flex-start"
-              color="primary"
-              >Choose file</v-btn
+              color="primary">{{$t('annex.choose_file')}}</v-btn
             >
           </div>
         </div>
         <div class="d-flex py-5">
           <div class="d-flex mw-6 align-center">
             <div class="o-t-item-div">
-              A copy of of location plan of the premises
+              {{$t('annex.location_plan')}}
             </div>
             <v-tooltip right>
               <template v-slot:activator="{ on, attrs }">
@@ -608,7 +593,7 @@
               <div>
                 <div class="d-flex align-center mb-2">
                   <v-icon color="secondary" dark> mdi-help-circle </v-icon>
-                  <h3 class="mb-0">Tips:</h3>
+                  <h3 class="mb-0">{{$t('tips')}}</h3>
                 </div>
                 <div class="ml-8 c-div">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -627,124 +612,70 @@
               class="o-btn-action small mr-1 mt-0"
               style="justify-self: flex-start"
               color="primary"
-              >Choose file</v-btn
+              >{{$t('annex.choose_file')}}</v-btn
             >
           </div>
         </div>
       </div>
       <div class="form-div">
         <p class="em-16">
-          Whenever there are changes to the submitted plans for the application,
-          the applicant is required to highlight any proposed changes on the
-          revised plans with colour pens and simple descriptions before making
-          submission to the Liquor Licensing Board for consideration and
-          referral to other government departments for processing. Revised plans
-          not in compliance with this requirement will be rejected. Applicant
-          should note that the Liquor Licensing Board and other government
-          departments concerned would not be responsible for any delay caused by
-          the errors and omissions in highlighting all changes on the plans.
+          {{$t('annex.remarks_1')}}
         </p>
         <div class="text-box">
-          <h3>Notes for enclosure of Annex I</h3>
+          <h3>{{$t('annex.note_1')}}</h3>
           <ol class="ml-0">
             <li>
               <p class="em-16 mt-4">
-                Annex l must be accompanied by the liquor licence application
-                form and the following plans; otherwise the Department is unable
-                to process the application:
+                {{$t('annex.note_2')}}
               </p>
               <ol type="a" class="ml-0">
                 <li>
                   <p class="em-16 mt-4">
-                    5 identical copies of proposed layout plans1 are required to
-                    show the layout of the premises including the portion for
-                    sale of supply of liquor and for consumption of liquor on
-                    the premises. Such plans should be drawn to scale (of not
-                    less than 1:100) in metric unit.
+                    {{$t('annex.note_3')}}
                   </p>
                 </li>
                 <li>
                   <p class="em-16 mt-4">
-                    3 identical copies of proposed ventilating system2 layout
-                    plans together with the Supplier Certificate are required if
-                    the ventilating system is installed in the premises. Such
-                    plans should be drawn to scale (of not less than 1:100) in
-                    metric unit.
+                    {{$t('annex.note_4')}}
                   </p>
                 </li>
                 <li>
                   <p class="em-16 mt-4">
-                    3 identical copies of location maps drawn to scale of
-                    1:1000, in metric unit, are required to clearly indicate the
-                    location of the premises
+                    {{$t('annex.note_5')}}
                   </p>
                 </li>
               </ol>
             </li>
             <li>
               <p class="em-16 mt-4">
-                The application will be referred to the Hong Kong Police Force,
-                District Office of the Home Affairs Department, Planning
-                Department, Fire Services Department, Buildings
-                Department/Housing Department/Architectural Services Department
-                etc. and government departments concerned for comment. It will
-                take longer processing time than normal liquor licence
-                applications.
+                {{$t('annex.note_6')}}
               </p>
             </li>
             <li>
               <p class="em-16 mt-4">
-                Except for premises in government properties or the Housing
-                Authority’s properties, certification made by recognised
-                professional(s) (i.e. authorised persons/structural engineers
-                registered under Section 3 of the Buildings Ordinance (Cap.
-                123)) certifying that the premises are free of unauthorised
-                building works shall be submitted (in person or by mail) to the
-                Liquor Licensing Board in prescribed form (FEHB 267) in
-                accordance with the corresponding guidelines, where appropriate,
-                listed as follows:
+                {{$t('annex.note_7')}}
               </p>
               <ol type="a" class="ml-0">
                 <li>
                   <p class="em-16 mt-4">
-                    “Certification of Food Business Premises Free of
-                    Unauthorised Building Works – Guidelines for Authorised
-                    Persons and Registered Structural Engineers” issued by the
-                    Director of Buildings
+                    {{$t('annex.note_8')}}
                   </p>
                 </li>
                 <li>
                   <p class="em-16 mt-4">
-                    “Certification of Food Business Premises Free of
-                    Unauthorised Building Works – Guidelines for Authorised
-                    Persons and Registered Structural Engineers” (applicable to
-                    the properties divested to Link Asset Management Limited)
-                    issued by the Independent Checking Unit of the Housing
-                    Department
+                    {{$t('annex.note_9')}}
                   </p>
                 </li>
               </ol>
             </li>
             <li>
               <p class="em-16 mt-4">
-                If a ventilating system is installed, the standard of
-                ventilation shall be a supply of not less than 17 cubic meters
-                of outside air per hour for each person accommodated on the
-                premises.
+                {{$t('annex.note_10')}}
               </p>
             </li>
             <li>
               <p class="em-16 mt-4">
-                Whenever there are changes to the submitted plans for the
-                application, the applicant is required to highlight any proposed
-                changes on the revised plans with colour pens and simple
-                descriptions before making submission to the Liquor Licensing
-                Board for consideration and referral to other government
-                departments for processing. Revised plans not in compliance with
-                this requirement will be rejected. Applicant should note that
-                the Liquor Licensing Board and other government departments
-                concerned would not be responsible for any delay caused by the
-                errors and omissions in highlighting all changes on the plans.
+                {{$t('annex.note_11')}}
               </p>
             </li>
           </ol>
@@ -755,11 +686,10 @@
       <div class="form-div">
         <v-form v-model="form.valid">
           <h2 class="purple-header em-26">
-            C. Information Relating to The Building
+            C. {{$t('annex.info_building')}}
           </h2>
           <h5 class="mt-8">
-            7 . What is the approved use of the building in which the premises
-            are located?
+            7 . {{$t('annex.approved_use')}}
           </h5>
           <v-radio-group
             v-model="premises_data.q7.options"
@@ -767,17 +697,17 @@
           >
             <v-radio
               class="mt-2"
-              :label="'Mixed Residential and Commercial Uses'"
+              :label="$t('annex.r_and_c')"
               :value="'Mixed'"
             ></v-radio>
             <v-radio
               class="mt-5"
-              :label="'Wholly Commercial Use'"
+              :label="$t('annex.wholly')"
               :value="'Commercial'"
             ></v-radio>
             <v-radio
               class="mt-5"
-              :label="'Other use, please give details'"
+              :label="$t('annex.other_use')"
               :value="'Other'"
             ></v-radio>
           </v-radio-group>
@@ -785,23 +715,23 @@
             class="tf-half ml-15 mt-5"
             v-model="premises_data.q7.others"
             :rules="form.fullnameRules"
-            label="File Ref."
+            :label="$t('annex.details')"
             outlined
             required
           ></v-text-field>
-          <h5 class="mt-6">8 . The premises have</h5>
+          <h5 class="mt-6">8 . {{$t('annex.premises_have')}}</h5>
           <v-radio-group
             v-model="premises_data.q8"
             class="list-radio-gp ml-8 my-3 mb-6"
           >
             <v-radio
               class="mt-2"
-              :label="'Independent access'"
+              :label="$t('annex.inde_access')"
               :value="'Independent'"
             ></v-radio>
             <v-radio
               class="mt-5"
-              :label="'Shared access with the other portion of the building'"
+              :label="$t('annex.shared_access')"
               :value="'Shared'"
             ></v-radio>
           </v-radio-group>
@@ -837,10 +767,10 @@ export default {
       btnDisabled: false,
       form: {
         valid: false,
-        fullnameRules: [(v) => !!v || "Name is required"],
+        fullnameRules: [(v) => !!v || this.$t("name_required")],
         emailRules: [
-          (v) => !!v || "Email is required",
-          (v) => /.+@.+/.test(v) || "Email must be valid",
+          (v) => !!v || "email_required",
+          (v) => /.+@.+/.test(v) || "email_vallid",
         ],
       },
       premises_data: {
