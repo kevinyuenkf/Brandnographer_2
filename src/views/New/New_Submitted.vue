@@ -1,34 +1,34 @@
 <template>
   <div class="content-div content-div-1">
     <div class="header">
-      <h1>Application for New Issue of a Liquor Licence</h1>
+      <h1>{{$t('application_for_new_issue_of_a_liquor_licence')}}</h1>
       <div class="d-flex align-center ">
         <BoldLine :options="{color:this.$vuetify.theme.themes.light.secondary,height:'auto',width:'6px'}" :spacing="'x-stretch'"></BoldLine>
-        <h2>Your Application is submitted</h2>
+        <h2>{{$t('new_submitted.submitted')}}</h2>
       </div>
     </div>
     <div class="body">
       <div class="d-flex align-center">
         <v-icon class="mr-4" style="font-size:70px" color="success">mdi-check-circle</v-icon>
-        <h3 class="mt-0">Your Application is submitted</h3>
+        <h3 class="mt-0">{{$t('new_submitted.submitted')}}</h3>
       </div>
-      <p class="ml-2 mt-4">Your application reference number is <a href="" target="_blank">llps1234_2345555-12122</a>. Under normal circumstances the whole confirmation will take around 8-10 weeks. You need to proceed to payment when licence is ready. We will keep you updated if you have any document missing for processing the application.</p>
+      <p class="ml-2 mt-4">{{$t('new_submitted.ref')}}<a href="" target="_blank">llps1234_2345555-12122</a>{{$t('new_submitted.circumstances')}}</p>
       <div style="max-width: 100%">
         <div class="d-flex o-f-stepper">
           <div v-for="(item,i) in items" :key="i" class="d-flex o-f-step">
             <div class="d-flex flex-column box">
               <v-icon v-if="item.active" style="font-size:40px" color="primary">mdi-check-circle</v-icon>
               <v-icon v-if="!item.active" style="font-size:40px" color="#E0E0E0">mdi-checkbox-blank-circle</v-icon>
-              <div class="d-flex"><h5 class="mb-2" style="text-align:center;" :class="item.active? 'step-active' : ''">{{item.title}}</h5></div>
+              <div class="d-flex"><h5 class="mb-2" style="text-align:center;" :class="item.active? 'step-active' : ''">{{$t(item.title)}}</h5></div>
 
-              <h5 v-if="item.remark != ''" class="em-16 fw-400">{{item.remark}}</h5>
+              <h5 v-if="item.remark != ''" class="em-16 fw-400">{{$t(item.remark)}}</h5>
               <h5 v-if="item.remark ==''" class="em-16 fw-400" style="color:transparent">*</h5>
             </div>
             <div class="connector" :style="!item.active?{borderColor:'#E0E0E0'} :{}"></div>
           </div>
         </div>
       </div>
-      <v-btn depressed class="o-btn-action rounded-pill" color="primary">Go to My Account</v-btn>
+      <v-btn depressed class="o-btn-action rounded-pill" color="primary">{{$t('new_submitted.my_account')}}</v-btn>
     </div>
   </div>
 </template>
@@ -48,12 +48,12 @@ export default {
   data: function () {
     return {
       items : [
-        { title: 'Application Submitted', remark: '', active : true, },
-        { title: 'Department Feedback', remark: '', active : false, },
-        { title: 'Documents Verified', remark: '', active : false, },
-        { title: 'Seek Approval', remark: '', active : false, },
-        { title: 'Licence Ready', remark: '* Proceed to payment', active : false, },
-        { title: 'Licence Issued', remark: '', active : false, },
+        { title: 'application_submitted', remark: '', active : true, },
+        { title: 'department_feedback', remark: '', active : false, },
+        { title: 'documents_verified', remark: '', active : false, },
+        { title: 'seek_approval', remark: '', active : false, },
+        { title: 'licence_ready', remark: 'proceed_to_payment', active : false, },
+        { title: 'licence_issued', remark: '', active : false, },
       ]
 
     }

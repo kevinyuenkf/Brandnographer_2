@@ -16,6 +16,8 @@ export default {
     infoApplicant: '申請人資料',
     digital_certificates_and_authentication: '電子證書和認證',
     online_payment: '電子支付',
+    reset: '重設',
+    save: '儲存',
     faq: {
         title: '常見問題',
         digital_certificates_and_authentication: '數碼證書和身份驗證',

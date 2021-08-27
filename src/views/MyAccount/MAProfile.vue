@@ -55,8 +55,8 @@
             </div>
           </div>
           <div class="px-8 pb-8 bot-div">
-           <router-link class="no-dec" :to="{ name: 'MAHome'}"><v-btn depressed class="o-btn-action rounded-pill mt-2 mr-5 mb-2" color="#413E56" dark>Reset</v-btn></router-link> 
-           <router-link class="no-dec" :to="{ name: 'MAHome'}"><v-btn depressed class="o-btn-action rounded-pill mt-2 mb-2" color="primary" dark>Save</v-btn></router-link>  
+           <router-link class="no-dec" :to="{ name: 'MAHome'}"><v-btn depressed class="o-btn-action rounded-pill mt-2 mr-5 mb-2" color="#413E56" dark>{{$t('reset')}}</v-btn></router-link> 
+           <router-link class="no-dec" :to="{ name: 'MAHome'}"><v-btn depressed class="o-btn-action rounded-pill mt-2 mb-2" color="primary" dark>{{$t('save')}}</v-btn></router-link>  
           </div>
         </div>
       </div>

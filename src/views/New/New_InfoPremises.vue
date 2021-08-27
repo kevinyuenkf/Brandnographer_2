@@ -299,7 +299,7 @@
               ></v-radio>
               <v-radio
                 class="mt-5"
-                :label="$t('q6a2')"
+                :label="$t('q6a3')"
                 :value="'Marine'"
               ></v-radio>
             </v-radio-group>

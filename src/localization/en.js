@@ -15,6 +15,8 @@ export default {
     infoApplicant: 'Information of Applicant',
     digital_certificates_and_authentication: 'Digital Certificates and Authentication',
     online_payment: 'Online Payment',
+    reset: 'Reset',
+    save: 'Save',
     faq: {
         title: 'FAQ',
         digital_certificates_and_authentication: 'Diuigital Certificates and Authentication',

@@ -68,7 +68,7 @@
                 </div>
               </div>
               <div class="d-flex justfiy-center w-100 px-8">
-                <BoldLine class="my-2" :options="{color:'#D2D2D25e',height:'2px',width:'100%'}" ></BoldLine>
+                <!-- <BoldLine class="my-2" :options="{color:'#D2D2D25e',height:'2px',width:'100%'}" ></BoldLine> -->
               </div>
 
               <div class="d-flex align-stretch o-f-stepper mt-4" style="max-width:940px;">
