@@ -149,7 +149,7 @@ export default {
         download: '下載'
     },
 
-    my_account: '我的帳戶',
+    my_account: '我的申請',
     please_choose_form: '請選擇申請表',
     select_services: '請選擇服務',
     new_lic: '首次簽發酒牌',
@@ -283,7 +283,7 @@ export default {
     },
 
     profile:{
-        profile: '資料夾',
+        profile: '我的帳戶',
         user: '用戶 ：  ',
         instruction: '請提供你的個人資料，以開立帳戶。有關資料會用作電子表格的預設資料。',
         personal_profile: '個人資料夾',
