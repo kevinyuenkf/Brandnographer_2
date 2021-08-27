@@ -28,7 +28,7 @@ export default {
         d_title_4: '我正在使用 Windows Vista 和 Internet Explorer 訪問需要用戶身份驗證的在線服務。在用戶身份驗證期間，屏幕會顯示安全警告 - “Windows 需要您的許可才能繼續”和“網站想要在您的計算機上使用此程序打開 Web 內容”。我應該怎麼辦？',
         d_content_4: 'Lorem ipsum dolor sat amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboure et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exeritation ullamco Laboris nisi ut aliquip ex ea commodo consequat.',
         d_title_5: '當我嘗試使用我的 Digi-Sign Personal ID-Cert 簽署在線許可服務時，我收到一條錯誤消息，指出無法找到證書。我應該怎麼辦？',
-        d_content_5: '可能是證書密碼修改後出現問題。如果您遇到此問題，請將證書導入 Internet Explorer 或 Firefox 並導出備份副本。您應該能夠使用備份副本登錄在線服務。請參考 ( <a href="http://www.dg-sign.com/eng/frame_service.htm" target="_blank">http://www.dg-sign.com/eng/frame_service. htm </a> ) 在 Digi-Sign 網站上關於如何導入和導出 ID 證書。',
+        d_content_5: '可能是證書密碼修改後出現問題。如果您遇到此問題，請將證書導入 Internet Explorer 或 Firefox 並導出備份副本。您應該能夠使用備份副本登錄在線服務。請參考 http://www.dg-sign.com/eng/frame_service 在 Digi-Sign 網站上關於如何導入和導出 ID 證書。',
     },
 
     licensing_offices: '牌照辦事處',
@@ -179,7 +179,7 @@ export default {
 
     apply: '申請',
 
-    reminder_1:'提示：後備持牌人新申請只可以在申請「首次簽發酒牌」、「酒牌續期」、「轉讓酒牌」時同時作出申請。',
+    reminder_1: '提示：後備持牌人新申請只可以在申請「首次簽發酒牌」、「酒牌續期」、「轉讓酒牌」時同時作出申請。',
     reminder_2: '提示：後備持牌人申請獲批後方可填寫「獲委任的後備持牌人的授權申請」。',
 
     login: '登入',
@@ -205,6 +205,7 @@ export default {
     br_number: 'a. 上述處所的商業登記號碼：',
     br_number_2: 'b. 如上述處所是由公司經營：',
     name: '姓名',
+   
     q5bi: '公司名稱',
     q5b2:'公司的商業登記號碼',
     q5b3:'公司編號（如有）',

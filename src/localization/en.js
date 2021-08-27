@@ -204,6 +204,8 @@ export default {
     br_number: 'a. Business Registration No. of the premises',
     br_number_2: 'b. If the premises is run by a company',
     name: 'Name',
+    reminder_1: 'Reminder: New Application for Nomination of Reserve Licensee can only be applied with application for new issue/ renewal/ transfer of liquor licence/ club liquor licence.',
+    reminder_2: 'Reminder: You may fill in the Authorisation form after the nomination has been approved.',
     q5bi: 'Name of company',
     q5b2:'Business Registration No. of the company',
     q5b3:'Company No. (if available)',

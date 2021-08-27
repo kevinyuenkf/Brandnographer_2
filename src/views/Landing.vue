@@ -84,17 +84,17 @@
                 />
               </div>
             </v-btn>
-            <div v-if="i === 2 && partOne.selected === 0 &&
+            <div v-bind:key v-if="i === 2 && partOne.selected === 0 &&
             !(partTwo[partOne.selected].selected === undefined) &&
             partTwo[partOne.selected].selected === 2 &&
             partThreeButtons[partOne.selected][partTwo[partOne.selected].selected].length > 0" class="form-type-reminder">
-              Reminder: New Application for Nomination of Reserve Licensee can only be applied with application for new issue/ renewal/ transfer of liquor licence/ club liquor licence.
+            {{$t('reminder_1')}}
             </div>
-            <div v-if="i === 3 && partOne.selected === 0 &&
+            <div v-bind:key v-if="i === 3 && partOne.selected === 0 &&
             !(partTwo[partOne.selected].selected === undefined) &&
             partTwo[partOne.selected].selected === 3 &&
             partThreeButtons[partOne.selected][partTwo[partOne.selected].selected].length > 0" class="form-type-reminder">
-              Reminder: You may fill in the Authorisation form after the nomination has been approved.
+            {{$t('reminder_2')}}
             </div>
           </template>
         </v-btn-toggle>

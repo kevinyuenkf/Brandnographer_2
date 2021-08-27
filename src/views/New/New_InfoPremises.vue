@@ -315,7 +315,7 @@
             >
               <v-radio
                 class="mt-5"
-                https://github.com/kevinyuenkf/Brandnographer_2.git    :label="$t('q6b1')"
+                :label="$t('q6b1')"
                 :value="'Issued'"
               ></v-radio>
               <div v-show="premises_data.q6b == 'Issued'">
