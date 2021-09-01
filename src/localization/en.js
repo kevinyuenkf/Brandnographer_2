@@ -140,7 +140,7 @@ export default {
         clear_all: 'Clear All',
         view: 'view',
         approved: 'Approved',
-        bar: 'Application',
+        bar: 'ABC Bar',
         creation_date: 'Creation Date',
         last_mod_date: 'Last Modification Date',
         view_and_edit: 'View and Edit',

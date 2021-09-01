@@ -155,7 +155,7 @@
                   <div class="d-flex align-center justify-space-between mw-4">
                     <div>
                      <div class="status-div">
-                        <div class="mr-1" :class="statusToClass(item.status)">•</div>
+                        <div class="mr-1" :class="statusToClass('Verified')">•</div>
                         <h6>{{$t(item.status)}}</h6>
                       </div>
                       <h5 class="l-u">{{$t(item.lastUpdate)}}</h5>
@@ -293,11 +293,11 @@ export default {
     statusToClass:function(status){
       if(status =='Approved' || status =='Verified'){
         return 'approved';
-      }else if(status == 'Department Feedback'){
+      }else if(status == 'department_feedback'){
         return 'submitted';
-      }else if(status == 'Application Submitted'){
+      }else if(status == 'application_submitted'){
         return 'submitted';
-      }else if(status == 'Verify Documents' || status =='Not recieved'){
+      }else if(status == 'documents_verified' || status =='Not recieved'){
         return 'error-t';
       }
     },

@@ -291,11 +291,11 @@ export default {
     statusToClass:function(status){
       if(status =='Approved' || status =='Verified'){
         return 'approved';
-      }else if(status == 'Department Feedback'){
+      }else if(status == 'department_feedback'){
         return 'submitted';
-      }else if(status == 'Application Submitted'){
+      }else if(status == 'application_submitted'){
         return 'submitted';
-      }else if(status == 'Verify Documents' || status =='Not recieved'){
+      }else if(status == 'documents_verified' || status =='Not recieved'){
         return 'error-t';
       }
     },
