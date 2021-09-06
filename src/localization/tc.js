@@ -253,7 +253,7 @@ export default {
         provision_toilet: '處所有否洗手間設施',
         yes_1: '有，在處所內',
         yes_2: '有，所在大廈的公共設施',
-        no_1: '如處所已領有或正申領其他部門的牌照或證明書，請列明',
+        no_1: '否，在處所內或所在大廈沒有洗手間設施',
         if_licence: "如處所已領有或正申領其他部門的牌照或證明書，請列明",
         licence_certificate: '牌照/合格證明書',
         enclosed: '現夾附',
